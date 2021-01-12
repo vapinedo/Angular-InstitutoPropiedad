@@ -1,0 +1,58 @@
+/* --------------------------------------- 
+    COLORES
+ --------------------------------------- */ 
+// fondos
+$color-principal:#001a5a;
+$color-secundario: #3f4f97;
+$color-alternativo: #a79142; 
+
+//a texto
+$texto-principal: #1b1c1e;
+$texto-secundario: #2b2b2b;
+$texto-alternativo: #001a5a;
+$texto-blanco: #f0f7ff;
+
+// utilitarios
+$color-celeste: #4698cb;
+$color-naranja: #f2d750;
+$color-rosado: #a8a8a8;
+$color-rojo: #cd0c21;
+$color-gris: #707070;
+
+#sidebar {
+    background-color: $color-principal;
+    position: fixed;
+    left: 0; 
+    height: 100%;
+
+    a {
+        color: $texto-blanco;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-decoration: none;
+        padding: 20px 10px;
+        transition: 0.4s;
+        transition-property: background-color;
+
+        mat-icon {
+            color: $texto-blanco;
+        }
+        span {
+            margin-top: 12px;
+        }
+    }
+
+    a:hover {
+        background-color: $color-secundario;    
+    } 
+
+    a.toggle-sidebar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+
+        span { margin: 0; }
+    }
+}
