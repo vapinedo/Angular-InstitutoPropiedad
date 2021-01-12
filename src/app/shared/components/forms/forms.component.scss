@@ -1,11 +1,8 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 /* --------------------------------------- 
     COLORES
  --------------------------------------- */ 
 // fondos
-$color-prinncipal:#001a5a;
+$color-principal:#001a5a;
 $color-secundario: #3f4f97;
 $color-alternativo: #a79142; 
 
@@ -21,3 +18,19 @@ $color-naranja: #f2d750;
 $color-rosado: #a8a8a8;
 $color-rojo: #cd0c21;
 $color-gris: #707070;
+
+.titulo-principal {
+    color: $color-principal;
+}
+
+article {
+    padding: 30px;
+
+    mat-form-field {
+        width: 100%;
+        margin-bottom: 30px;    
+    }
+}
+article.client-data {
+    margin-right: 30px;
+}

@@ -1,0 +1,58 @@
+<h1 class="titulo-principal animate__animated animate__fadeIn animate__faster">Formularios</h1>
+
+<div class="row animate__animated animate__fadeIn animate__faster">
+    <article class="mat-elevation-z1 col-md-6 client-data">
+        <h2 class="text-muted">Datos del Cliente</h2>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+            <mat-form-field>
+                <mat-label>Nombres</mat-label>
+                <input matInput type="text" formControlName="name">
+                <mat-error *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                    <span *ngIf="name?.errors?.required">Email es requerido</span>
+                    <span *ngIf="name?.errors?.pattern">Email incorrecto</span>
+                </mat-error>
+            </mat-form-field>       
+
+            <mat-form-field>
+                <mat-label>Apellidos</mat-label>
+                <input matInput type="text" formControlName="lastname">
+                <mat-error *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)">
+                    <span *ngIf="lastname?.errors?.required">Apellido es requerido</span>
+                    <span *ngIf="lastname?.errors?.pattern">Apellido incorrecto</span>
+                </mat-error>
+            </mat-form-field>
+            
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email">
+                <mat-error *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="animate__animated animate__fadeIn animate_faster">
+                    <span *ngIf="email?.errors?.required">Email es requerido</span>
+                    <span *ngIf="email?.errors?.pattern">Email incorrecto</span>
+                </mat-error>
+            </mat-form-field>            
+        
+            <mat-form-field>
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <button 
+                type="submit" 
+                color="primary"
+                mat-raised-button
+                [disabled]="!form.valid">
+                Enviar
+            </button>
+        </form>
+    </article>
+
+    <article class="mat-elevation-z1 col-md-5">
+        <h2 class="text-muted">Data Capturada</h2>
+        <pre>{{ form.value | json }}</pre>
+    </article>
+</div>
