@@ -44,16 +44,34 @@
                 </mat-error>
             </mat-form-field>
 
-            <div class="radio-group">
+            <mat-form-field appearance="fill">
+                <mat-label>Seleccionar Categoría</mat-label>
+                <mat-select formControlName="category">
+                  <mat-option *ngFor="let category of customerCategory" [value]="category.value">{{ category.viewValue }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="category?.invalid && (category?.dirty || category?.touched)" class="animate__animated animate__fadeIn animate_faster">
+                    <span *ngIf="category?.errors?.required">Categoría es requerido</span>
+                </mat-error>
+            </mat-form-field>
+
+            <section class="input-group">
                 <mat-radio-group formControlName="gender">
-                    <mat-radio-button value="m">
-                        <span class="text-muted">Hombre</span>
-                    </mat-radio-button>
-                    <mat-radio-button value="f">
-                        <span class="text-muted">Mujer</span>
-                    </mat-radio-button>
+                    <mat-radio-button value="hombre"  class="text-muted input-radio">Hombre</mat-radio-button>
+                    <mat-radio-button value="mujer" class="text-muted input-radio">Mujer</mat-radio-button>
                 </mat-radio-group>
-            </div>
+                <mat-error *ngIf="gender?.invalid && (gender?.dirty || gender?.touched)" class="animate__animated animate__fadeIn animate_faster">
+                    <span *ngIf="gender?.errors?.required">Género es requerido</span>
+                </mat-error>
+            </section>
+
+            <section class="input-group">
+                <mat-checkbox formControlName="terms" class="text-muted">
+                    Acepta términos y condiciones
+                </mat-checkbox>
+                <mat-error *ngIf="terms?.invalid && (terms?.dirty || terms?.touched)" class="animate__animated animate__fadeIn animate_faster">
+                    <span *ngIf="terms?.errors?.required">Debe aceptar términos y condiciones</span>
+                </mat-error>                
+            </section>            
             
             <button 
                 type="submit" 
@@ -68,5 +86,8 @@
     <article class="mat-elevation-z1 col-md-5">
         <h2 class="text-muted">Data Capturada</h2>
         <pre>{{ form.value | json }}</pre>
+
+        <h2 class="text-muted">Estado del Formulario</h2>
+        <pre><strong>Es válido?</strong>: {{ form.valid }}</pre>
     </article>
 </div>

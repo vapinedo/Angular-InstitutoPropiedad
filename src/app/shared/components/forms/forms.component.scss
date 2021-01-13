@@ -26,13 +26,15 @@ $color-gris: #707070;
 article {
     padding: 30px;
 
-    .radio-group {
+    .input-group {
+        width: 100%;
+        margin-bottom: 30px;
+
         mat-radio-button {
             margin-right: 30px;
         }
     }
 
-    .radio-group, 
     mat-form-field {
         width: 100%;
         margin-bottom: 30px;    

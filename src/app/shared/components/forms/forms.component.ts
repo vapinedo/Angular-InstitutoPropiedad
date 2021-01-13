@@ -12,6 +12,13 @@ export class FormsComponent implements OnInit {
   public form: FormGroup;
   readonly NAME_MINLENGTH = 6;
   readonly NAME_MAXLENGTH = 20;
+  customerCategory = [
+    {value: 'starter', viewValue: 'Principiante'},
+    {value: 'bronze', viewValue: 'Bronce'},
+    {value: 'silver', viewValue: 'Plata'},
+    {value: 'gold', viewValue: 'Oro'},
+    {value: 'platinum', viewValue: 'Platino'}
+  ];
   readonly VALID_EMAIL_STRING = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
   constructor(
@@ -35,6 +42,12 @@ export class FormsComponent implements OnInit {
       ]],
       gender: ['', [
         Validators.required
+      ]],
+      terms: [false, [
+        Validators.requiredTrue
+      ]],
+      category: ['', [
+        Validators.required
       ]]      
     });
   }
@@ -44,6 +57,8 @@ export class FormsComponent implements OnInit {
   get email() { return this.form.get('email'); }
   get birthdate() { return this.form.get('birthdate'); }
   get gender() { return this.form.get('gender'); }
+  get terms() { return this.form.get('terms'); }
+  get category() { return this.form.get('category'); }
 
   onSubmit() {
     if ( this.form.valid ) {
