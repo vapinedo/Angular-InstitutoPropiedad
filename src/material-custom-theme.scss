@@ -104,13 +104,13 @@ $dark-theme: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
 
 @include angular-material-theme($light-theme);
 
-.light-theme {
-    @include angular-material-theme($light-theme);
-    background-color: $blanco;
-    color: $negro;
-}
-.dark-theme {
-    @include angular-material-theme($dark-theme);
-    background-color: $negro-claro;
-    color: $blanco;
-}
+// .light-theme {
+//     @include angular-material-theme($light-theme);
+//     background-color: $blanco;
+//     color: $negro;
+// }
+// .dark-theme {
+//     @include angular-material-theme($dark-theme);
+//     background-color: $negro-claro;
+//     color: $blanco;
+// }

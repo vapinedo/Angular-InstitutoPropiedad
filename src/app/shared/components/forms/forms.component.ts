@@ -29,13 +29,21 @@ export class FormsComponent implements OnInit {
       email: ['', [
         Validators.required,
         Validators.pattern(this.VALID_EMAIL_STRING)
-      ]],      
+      ]],
+      birthdate: ['', [
+        Validators.required
+      ]],
+      gender: ['', [
+        Validators.required
+      ]]      
     });
   }
 
   get name() { return this.form.get('name'); }
   get lastname() { return this.form.get('lastname'); }
   get email() { return this.form.get('email'); }
+  get birthdate() { return this.form.get('birthdate'); }
+  get gender() { return this.form.get('gender'); }
 
   onSubmit() {
     if ( this.form.valid ) {
@@ -46,6 +54,10 @@ export class FormsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onSetdate(event: any) {
+    const { date } = event.value.toLocaleDateString(); 
   }
 
 }

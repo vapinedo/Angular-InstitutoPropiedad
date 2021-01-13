@@ -34,17 +34,32 @@
         
             <mat-form-field>
                 <mat-label>Fecha de Nacimiento</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input matInput formControlName="birthdate" (dateChange)="onSetdate($event)" [matDatepicker]="picker">
                 <mat-datepicker-toggle matSuffix [for]="picker">
                     <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
                 </mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="birthdate?.invalid && (birthdate?.dirty || birthdate?.touched)" class="animate__animated animate__fadeIn animate_faster">
+                    <span *ngIf="birthdate?.errors?.required">Fecha de nacimiento es requerido</span>
+                </mat-error>
             </mat-form-field>
 
+            <div class="radio-group">
+                <mat-radio-group formControlName="gender">
+                    <mat-radio-button value="m">
+                        <span class="text-muted">Hombre</span>
+                    </mat-radio-button>
+                    <mat-radio-button value="f">
+                        <span class="text-muted">Mujer</span>
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+            
             <button 
                 type="submit" 
                 color="primary"
-                mat-raised-button>
+                mat-raised-button
+                [disabled]="!form.valid">
                 Enviar
             </button>
         </form>
