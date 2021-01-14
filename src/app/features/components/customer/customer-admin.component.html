@@ -14,7 +14,7 @@
             <button [routerLink]="['/customer-new']" mat-raised-button color="primary">Crear</button>
         </div>
 
-        <mat-progress-bar *ngIf="showProgressBar" mode="indeterminate"></mat-progress-bar>
+        <app-progressbar *ngIf="showProgressBar"></app-progressbar>
     
         <table mat-table [dataSource]="dataSource" *ngIf="!showSpinner" class="animate__animated animate__fadeIn animate__faster">
             <ng-container matColumnDef="name">
@@ -67,9 +67,7 @@
         </table>
         <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
 
-        <div *ngIf="showSpinner">
-            <mat-spinner class="m-auto"></mat-spinner>
-        </div>
+        <app-spinner *ngIf="showSpinner"></app-spinner>
 
     </article>
 </section>

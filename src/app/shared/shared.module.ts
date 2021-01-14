@@ -6,10 +6,14 @@ import { MaterialModule } from './modules/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
+import { ProgressbarComponent } from './components/loaders/progressbar.component';
+import { SpinnerComponent } from './components/loaders/spinner.component';
 
 @NgModule({
   declarations: [
-    SidebarMenuComponent
+    SidebarMenuComponent,
+    ProgressbarComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -19,6 +23,8 @@ import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.com
   ],
   exports: [
     SidebarMenuComponent,
+    ProgressbarComponent,
+    SpinnerComponent,
     
     CommonModule,
     RouterModule,
