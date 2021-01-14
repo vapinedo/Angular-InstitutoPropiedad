@@ -4,7 +4,7 @@
     <article class="mat-elevation-z1 col-md-6 client-data">
         <h2 class="text-muted">Datos del Cliente</h2>
 
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+        <form [formGroup]="customerForm" (ngSubmit)="onSubmit()" autocomplete="off">
             <mat-form-field>
                 <mat-label>Nombres</mat-label>
                 <input matInput type="text" formControlName="name">
@@ -65,11 +65,11 @@
             </section>
 
             <section class="input-group">
-                <mat-checkbox formControlName="terms" class="text-muted">
+                <mat-checkbox formControlName="agreeTerms" class="text-muted">
                     Acepta términos y condiciones
                 </mat-checkbox>
-                <mat-error *ngIf="terms?.invalid && (terms?.dirty || terms?.touched)" class="animate__animated animate__fadeIn animate_faster">
-                    <span *ngIf="terms?.errors?.required">Debe aceptar términos y condiciones</span>
+                <mat-error *ngIf="agreeTerms?.invalid && (agreeTerms?.dirty || agreeTerms?.touched)" class="animate__animated animate__fadeIn animate_faster">
+                    <span *ngIf="agreeTerms?.errors?.required">Debe aceptar términos y condiciones</span>
                 </mat-error>                
             </section>            
             
@@ -77,7 +77,7 @@
                 type="submit" 
                 color="primary"
                 mat-raised-button
-                [disabled]="!form.valid">
+                [disabled]="!customerForm.valid">
                 Enviar Datos
             </button>
         </form>
@@ -85,9 +85,9 @@
 
     <article class="mat-elevation-z1 col-md-5">
         <h2 class="text-muted">Data Capturada</h2>
-        <pre>{{ form.value | json }}</pre>
+        <pre>{{ customerForm.value | json }}</pre>
 
         <h2 class="text-muted">Estado del Formulario</h2>
-        <pre><strong>Es válido?</strong>: {{ form.valid }}</pre>
+        <pre><strong>Es válido?</strong>: {{ customerForm.valid ? 'Siii' : 'Noooo' }}</pre>
     </article>
 </div>

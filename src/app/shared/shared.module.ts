@@ -5,12 +5,10 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from './modules/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { FormsComponent } from './components/forms/forms.component';
 import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
 
 @NgModule({
   declarations: [
-    FormsComponent,
     SidebarMenuComponent
   ],
   imports: [
@@ -20,7 +18,6 @@ import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.com
     ReactiveFormsModule
   ],
   exports: [
-    FormsComponent,
     SidebarMenuComponent,
     
     CommonModule,
