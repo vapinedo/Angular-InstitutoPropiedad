@@ -1,8 +1,9 @@
 <nav id="sidebar" [ngClass]="{'active': sidedarIsOpen}">
-    <a (click)="onSidebarCollapse()" class="toggle-nav">
-        <mat-icon>chevron_right</mat-icon>
-        <span>Logo</span>
-    </a>
+    
+    <header>
+        <img [src]="logo" width="80" alt="Logo">
+    </header>
+
     <a href="#" routerLinkActive="active" matTooltip="Estilos de Alertas" matTooltipPosition="right">
         <mat-icon>info</mat-icon>
         <span>Alertas</span>
@@ -27,4 +28,5 @@
         <mat-icon>table_view</mat-icon>
         <span>Tablas</span>
     </a>
+    
 </nav>

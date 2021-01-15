@@ -25,6 +25,8 @@ $color-gris: #707070;
     max-width: 250px;
     transition: all 0.3s;
 
+    header { padding: 10px 5px; }
+
     &.active {
         min-width: 94px;
         max-width: 94px;
@@ -41,26 +43,15 @@ $color-gris: #707070;
         text-decoration: none;
         transition-property: background-color;
 
-        &:hover,
-        &.active {
-            background-color: $color-secundario;
-        }
-        &.toggle-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row-reverse;
-            gap: .5em;
-    
-            span { 
-                margin: 0; 
-            }
-        }
         mat-icon {
             color: $texto-blanco;
         }
         span {
             margin-top: 12px;
+        }
+        &:hover,
+        &.active {
+            background-color: $color-secundario;
         }
     }
 }
