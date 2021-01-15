@@ -77,7 +77,9 @@ export class CustomerEditComponent implements OnInit, OnDestroy {
     if (this.customerForm.valid) { 
 
       this.showSpinner = true;
-      this.customer = { ...this.customerForm.value };
+      let customer = { ...this.customerForm.value };
+      customer.id = this.customer.id;
+      customer.birthdate = this.customerForm.value.birthdate.getTime();
 
       this.subscription2 = this.customerSvc.update(this.customer)
         .subscribe( response => {
