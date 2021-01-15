@@ -19,11 +19,11 @@ $color-rosado: #a8a8a8;
 $color-rojo: #cd0c21;
 $color-gris: #707070;
 
-#sidebar {
+#sidebar-menu {
     background-color: $color-principal;
-    position: fixed;
-    left: 0; 
     height: 100%;
+    left: 0; 
+    position: fixed;
 
     a {
         color: $texto-blanco;
@@ -48,7 +48,7 @@ $color-gris: #707070;
         background-color: $color-secundario;    
     } 
 
-    a.toggle-sidebar {
+    a.toggle-nav {
         display: flex;
         justify-content: center;
         align-items: center;
