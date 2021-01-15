@@ -23,11 +23,11 @@ export class CustomerNewComponent implements OnInit, OnDestroy {
   readonly VALID_EMAIL_STRING = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
   public customerCategory = [
-    {value: 'starter', viewValue: 'Principiante'},
-    {value: 'bronze', viewValue: 'Bronce'},
-    {value: 'silver', viewValue: 'Plata'},
-    {value: 'gold', viewValue: 'Oro'},
-    {value: 'platinum', viewValue: 'Platino'}
+    {value: 'Principiante', viewValue: 'Principiante'},
+    {value: 'Bronce', viewValue: 'Bronce'},
+    {value: 'Plata', viewValue: 'Plata'},
+    {value: 'Oro', viewValue: 'Oro'},
+    {value: 'Platino', viewValue: 'Platino'}
   ];
 
   constructor(
