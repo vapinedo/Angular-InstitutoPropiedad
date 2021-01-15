@@ -19,12 +19,17 @@ $color-rosado: #a8a8a8;
 $color-rojo: #cd0c21;
 $color-gris: #707070;
 
-nav {
+#sidebar {
     background-color: $color-principal;
-    height: 100vh;
-    width: 109px;
-    // left: 0; 
-    // position: fixed;
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.3s;
+
+    &.active {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+    }
 
     a {
         align-items: center;

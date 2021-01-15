@@ -1,5 +1,5 @@
-<nav>
-    <a href="#" class="toggle-nav">
+<nav id="sidebar" [ngClass]="{'active': sidedarIsOpen}">
+    <a (click)="onSidebarCollapse()" class="toggle-nav">
         <mat-icon>chevron_right</mat-icon>
         <span>Logo</span>
     </a>

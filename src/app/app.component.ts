@@ -1,5 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
-import { OverlayContainer } from '@angular/cdk/overlay'
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +6,6 @@ import { OverlayContainer } from '@angular/cdk/overlay'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'registro-vehicular';
-
-  @HostBinding('class') componentCssClass: any;
-
-  constructor(  public overlayContainer: OverlayContainer ) { }
-
-  onSetTheme(event: any) {
-    const theme = event.checked ? 'dark-theme' : 'light-theme';
-    this.overlayContainer.getContainerElement().classList.add(theme);
-    this.componentCssClass = theme;
-  }
 }

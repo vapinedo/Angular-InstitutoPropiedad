@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  public sidedarIsOpen = true;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSidebarCollapse() {
+    console.log('clicked');
+    this.sidedarIsOpen = !this.sidedarIsOpen;
+  }
 }
