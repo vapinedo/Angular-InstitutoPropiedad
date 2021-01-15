@@ -1,21 +1,24 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { v4 as uuidv4} from 'uuid';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Customer } from 'src/app/shared/models/customer.model';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { CustomerService } from 'src/app/core/services/customer.service';
 
 @Component({
-  selector: 'app-customer-new',
-  templateUrl: './customer-new.component.html',
+  selector: 'app-customer-edit',
+  templateUrl: './customer-edit.component.html',
   styleUrls: ['./styles.component.scss']
 })
-export class CustomerNewComponent implements OnInit, OnDestroy {
+export class CustomerEditComponent implements OnInit, OnDestroy {
 
+  public showSpinner = false;
   public customerForm: FormGroup;
   public customer = new Customer();
   private subscription1 = new Subscription();
+  private subscription2 = new Subscription();
 
   readonly NAME_MINLENGTH = 6;
   readonly NAME_MAXLENGTH = 20;
@@ -29,10 +32,12 @@ export class CustomerNewComponent implements OnInit, OnDestroy {
     {value: 'gold', viewValue: 'Oro'},
     {value: 'platinum', viewValue: 'Platino'}
   ];
-
+  
   constructor(
+    private router: Router,
     private fb: FormBuilder,
-    private customerSvc: CustomerService
+    private route: ActivatedRoute, 
+    private customerSvc: CustomerService    
   ) { 
     this.customerForm = this.fb.group({
       name: ['', [
@@ -60,25 +65,31 @@ export class CustomerNewComponent implements OnInit, OnDestroy {
   get category() { return this.customerForm.get('category'); }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+
+    if (id !== null) {
+      this.subscription1 = this.customerSvc.getOne(id)
+        .subscribe((response: any) => this.customer = response);
+    }    
   }
 
-  onSubmit() {
-    if ( this.customerForm.valid ) {
-      
-      const id = uuidv4();
-      this.customer = { id, ...this.customerForm.value };
-      this.customer.birthdate = this.customerForm.value.birthdate.getTime();
+  onUpdate() {
+    if (this.customerForm.valid) { 
 
-      this.subscription1 = this.customerSvc.create(this.customer)
-        .subscribe(response => {
-          console.log(response)
+      this.showSpinner = true;
+      this.customer = { ...this.customerForm.value };
+
+      this.subscription2 = this.customerSvc.update(this.customer)
+        .subscribe( response => {
+          this.showSpinner = false;
+          this.router.navigateByUrl('/customers');
         })
     }
     return;
-  }
+  }   
 
   ngOnDestroy(): void {
     this.subscription1.unsubscribe();
-  }
-
+    this.subscription2.unsubscribe();
+  }  
 }

@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CustomerNewComponent } from './features/components/customer/customer-new.component';
 import { CustomerAdminComponent } from './features/components/customer/customer-admin.component';
+import { CustomerEditComponent } from './features/components/customer/customer-edit.component';
 
 const routes: Routes = [
   { path: 'customers', component: CustomerAdminComponent },
   { path: 'customer-new', component: CustomerNewComponent },
+  { path: 'customer-edit/:id', component: CustomerEditComponent},
   { path: '**', redirectTo: 'customer-new' }
 ];
 
