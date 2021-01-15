@@ -1,6 +1,31 @@
+/* --------------------------------------- 
+    COLORES
+ --------------------------------------- */ 
+// fondos
+$color-principal:#001a5a;
+$color-secundario: #3f4f97;
+$color-alternativo: #a79142; 
+
+//a texto
+$texto-principal: #1b1c1e;
+$texto-secundario: #2b2b2b;
+$texto-alternativo: #001a5a;
+$texto-blanco: #f0f7ff;
+
+// utilitarios
+$color-celeste: #4698cb;
+$color-naranja: #f2d750;
+$color-rosado: #a8a8a8;
+$color-rojo: #cd0c21;
+$color-gris: #707070;
+
 #wrapper {
     display: flex;
     align-items: stretch;
+
+    aside {
+        background-color: $color-principal;
+    }
 
     main {
         width: 100%;
