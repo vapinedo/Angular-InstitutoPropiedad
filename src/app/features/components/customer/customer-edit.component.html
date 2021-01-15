@@ -1,7 +1,7 @@
 <h1 class="titulo-principal animate__animated animate__fadeIn animate__faster">Ejemplo de Formulario</h1>
 
-<div class="row animate__animated animate__fadeIn animate__faster">
-    <article class="mat-elevation-z1 col-md-6 client-data">
+<div class="row mat-elevation-z1 animate__animated animate__fadeIn animate__faster">
+    <article class="col-md-7 client-data">
         <h2 class="text-muted">Datos del Cliente</h2>
 
         <form [formGroup]="customerForm" (ngSubmit)="onUpdate()" autocomplete="off">
@@ -83,7 +83,7 @@
         </form>
     </article>
 
-    <article class="mat-elevation-z1 col-md-5">
+    <article class="col-md-5">
         <h2 class="text-muted">Data Capturada</h2>
         <pre>{{ customerForm.value | json }}</pre>
 
