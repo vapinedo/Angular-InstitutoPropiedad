@@ -5,13 +5,13 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from './modules/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProgressbarComponent } from './components/loaders/progressbar.component';
 import { SpinnerComponent } from './components/loaders/spinner.component';
 
 @NgModule({
   declarations: [
-    SidebarMenuComponent,
+    SidebarComponent,
     ProgressbarComponent,
     SpinnerComponent
   ],
@@ -22,7 +22,7 @@ import { SpinnerComponent } from './components/loaders/spinner.component';
     ReactiveFormsModule
   ],
   exports: [
-    SidebarMenuComponent,
+    SidebarComponent,
     ProgressbarComponent,
     SpinnerComponent,
     
