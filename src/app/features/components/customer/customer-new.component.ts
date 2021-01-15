@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { v4 as uuidv4} from 'uuid';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 import { Customer } from 'src/app/shared/models/customer.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomerService } from 'src/app/core/services/customer.service';
@@ -31,6 +32,7 @@ export class CustomerNewComponent implements OnInit, OnDestroy {
   ];
 
   constructor(
+    private router: Router,
     private fb: FormBuilder,
     private customerSvc: CustomerService
   ) { 
@@ -70,9 +72,7 @@ export class CustomerNewComponent implements OnInit, OnDestroy {
       this.customer.birthdate = this.customerForm.value.birthdate.getTime();
 
       this.subscription1 = this.customerSvc.create(this.customer)
-        .subscribe(response => {
-          console.log(response)
-        })
+        .subscribe(response => this.router.navigateByUrl('/customers'))
     }
     return;
   }

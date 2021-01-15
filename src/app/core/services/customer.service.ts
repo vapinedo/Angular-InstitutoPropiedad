@@ -8,8 +8,8 @@ import { Customer } from 'src/app/shared/models/customer.model';
 @Injectable()
 export class CustomerService {
 
+  private customerArr: Customer[]; 
   private collection = 'customers';
-  private itemsArr: Customer[]; 
   private endPoint = 'https://portafolioangular-135a6.firebaseio.com';
 
   constructor(private http: HttpClient) { }
@@ -18,8 +18,8 @@ export class CustomerService {
     return this.http.get(`${ this.endPoint }/${ this.collection }.json`)
       .pipe(
         map((response) => {
-          this.itemsArr = this.createArray(response);
-          return this.itemsArr;
+          this.customerArr = this.createArray(response);
+          return this.customerArr;
         })
       );
   }    
@@ -39,12 +39,12 @@ export class CustomerService {
   private createArray(customersObj: object): Customer[] {
     if ( customersObj === null ) { return []; }
 
-    const itemsArr = [];
+    const customerArr = [];
     Object.values(customersObj).forEach( value => {
       const customer = value;
-      itemsArr.push(customer);
+      customerArr.push(customer);
     });
-    return itemsArr;
+    return customerArr;
   }
 
   delete(id: string) {
