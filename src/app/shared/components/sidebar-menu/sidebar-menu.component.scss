@@ -19,41 +19,43 @@ $color-rosado: #a8a8a8;
 $color-rojo: #cd0c21;
 $color-gris: #707070;
 
-#sidebar-menu {
+nav {
     background-color: $color-principal;
-    height: 100%;
-    left: 0; 
-    position: fixed;
+    height: 100vh;
+    width: 109px;
+    // left: 0; 
+    // position: fixed;
 
     a {
+        align-items: center;
         color: $texto-blanco;
         display: flex;
-        align-items: center;
         flex-direction: column;
-        text-decoration: none;
         padding: 20px 10px;
         transition: 0.4s;
+        text-decoration: none;
         transition-property: background-color;
 
+        &:hover,
+        &.active {
+            background-color: $color-secundario;
+        }
+        &.toggle-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row-reverse;
+            gap: .5em;
+    
+            span { 
+                margin: 0; 
+            }
+        }
         mat-icon {
             color: $texto-blanco;
         }
         span {
             margin-top: 12px;
         }
-    }
-
-    a:hover,
-    a.active {
-        background-color: $color-secundario;    
-    } 
-
-    a.toggle-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row-reverse;
-
-        span { margin: 0; }
     }
 }
