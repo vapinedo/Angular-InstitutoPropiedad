@@ -5,12 +5,14 @@ import { CustomerNewComponent } from './features/components/customer/customer-ne
 import { CustomerAdminComponent } from './features/components/customer/customer-admin.component';
 import { CustomerEditComponent } from './features/components/customer/customer-edit.component';
 import { ButtonsComponent } from './features/components/buttons/buttons.component';
+import { TypographyComponent } from './features/components/typography/typography.component';
 
 const routes: Routes = [
   { path: 'customers', component: CustomerAdminComponent },
   { path: 'customer-new', component: CustomerNewComponent },
   { path: 'customer-edit/:id', component: CustomerEditComponent},
   { path: 'buttons', component: ButtonsComponent },
+  { path: 'typography', component: TypographyComponent},
   { path: '**', redirectTo: 'customer-new' }
 ];
 

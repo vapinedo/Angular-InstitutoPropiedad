@@ -7,13 +7,15 @@ import { CustomerNewComponent } from './components/customer/customer-new.compone
 import { CustomerAdminComponent } from './components/customer/customer-admin.component';
 import { CustomerEditComponent } from './components/customer/customer-edit.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
+import { TypographyComponent } from './components/typography/typography.component';
 
 @NgModule({
   declarations: [
     CustomerNewComponent,
     CustomerAdminComponent,
     CustomerEditComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    TypographyComponent
   ],
   imports: [
     CommonModule,
