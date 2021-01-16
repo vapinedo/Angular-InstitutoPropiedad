@@ -1,5 +1,6 @@
 @import "src/assets/scss/colors";
 
+
 .btn-principal {
     border: 1px solid transparent;
     background-color: $boton-principal;
@@ -7,7 +8,8 @@
     height: 34px;
     padding: 8px 20px;
     border-radius: 3px;
-    width: 145px;
+    transition: 0.3s;
+    transition-property: background-color;
 
     &:focus {
         border: 1px solid $blanco;
@@ -15,8 +17,31 @@
     }
     &:hover {
         background-color: $boton-hover;
-        outline: none;
-        border: none;
+        outline-color: transparent;
+        border-color: transparent;
+        
+    }
+}
+
+.btn-secundario {
+    border: 1px solid $boton-principal;
+    background-color: #fff;
+    color: $boton-principal;
+    height: 34px;
+    padding: 8px 20px;
+    border-radius: 3px;
+    transition: 0.3s;
+    transition-property: background-color;
+
+    &:focus {
+        border: 1px solid $blanco;
+        outline: 1px solid $boton-hover;
+    }
+    &:hover {
+        color: $blanco;
+        background-color: $boton-hover;
+        outline-color: transparent;
+        border-color: transparent;
         
     }
 }
