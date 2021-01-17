@@ -1,8 +1,15 @@
 <h1 class="asw-h1">Utilidades</h1>
 
 <section class="row asw-box">
-    <h2 class="asw-h2 text-muted">Dialogs</h2>    
+    <h2 class="asw-h2 text-muted">Botones</h2>
+    <div class="asw-btn-group">
+        <button class="asw-btn-primary">Botón Principal</button>
+        <button class="asw-btn-secondary">Botón Secundario</button>
+        <button class="asw-btn-danger">Botón Danger</button>
+        <button class="asw-btn" disabled>Botón Bloqueado</button>
+    </div>
 
+    <h2 class="asw-h2 text-muted mt-5">Dialogs</h2>    
     <div class="asw-btn-group">
         <button (click)="onDialogSimple()" class="asw-btn-primary">Simple</button>
         <button (click)="onDialogConfirm()" class="asw-btn-secondary">Confirm</button>

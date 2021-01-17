@@ -6,7 +6,6 @@ import { SharedModule } from '../shared/shared.module';
 import { CustomerNewComponent } from './components/customer/customer-new.component';
 import { CustomerAdminComponent } from './components/customer/customer-admin.component';
 import { CustomerEditComponent } from './components/customer/customer-edit.component';
-import { ButtonsComponent } from './components/buttons/buttons.component';
 import { TypographyComponent } from './components/typography/typography.component';
 import { UtilitiesComponent } from './components/utilities/utilities.component';
 
@@ -15,7 +14,6 @@ import { UtilitiesComponent } from './components/utilities/utilities.component';
     CustomerNewComponent,
     CustomerAdminComponent,
     CustomerEditComponent,
-    ButtonsComponent,
     TypographyComponent,
     UtilitiesComponent
   ],
