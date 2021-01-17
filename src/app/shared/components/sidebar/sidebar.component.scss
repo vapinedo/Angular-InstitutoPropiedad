@@ -1,38 +1,62 @@
 @import "src/assets/scss/colors";
 
+
 #sidebar {
-    display: block;
-    min-width: 250px;
-    max-width: 250px;
+    height: 100%;
+    box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+    min-width: 94px;
+    max-width: 94px;
     transition: all 0.3s;
 
-    header { 
-        padding: 10px 5px; 
-    }
-    &.active {
-        min-width: 94px;
-        max-width: 94px;
+    &.expanded {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.2em;
+        min-width: 260px;
+        max-width: 260px;
         text-align: center;
     }
-    a {
-        align-items: center;
-        color: $blanco;
-        display: flex;
-        flex-direction: column;
-        padding: 20px 10px;
-        transition: 0.4s;
-        text-decoration: none;
-        transition-property: background-color;
 
-        mat-icon {
+    .main-menu {
+        background-color: $principal;
+        display: block;
+        height: 100%;
+        width: 94px;
+
+        header { 
+            text-align: center;
+            padding: 10px; 
+
+            mat-icon {
+                color: #fff;
+            }
+        }
+        a {
+            align-items: center;
             color: $blanco;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 10px;
+            transition: 0.4s;
+            text-decoration: none;
+            transition-property: background-color;
+    
+            mat-icon {
+                color: $blanco;
+            }
+            span {
+                margin-top: 12px;
+            }
+            &:hover,
+            &.active {
+                background-color: $secundario;
+            }
         }
-        span {
-            margin-top: 12px;
-        }
-        &:hover,
-        &.active {
-            background-color: $secundario;
-        }
+    }
+
+    .submenu {
+        text-align: left;
+        padding-top: 20px;
+        padding-right: 20px;
     }
 }

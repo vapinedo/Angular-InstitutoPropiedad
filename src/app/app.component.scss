@@ -1,12 +1,7 @@
-@import "src/assets/scss/colors";
-
 #wrapper {
     display: flex;
     align-items: stretch;
 
-    aside {
-        background-color: $principal;
-    }
     main {
         width: 100%;
         padding: 20px;

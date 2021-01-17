@@ -1,32 +1,41 @@
-<nav id="sidebar" [ngClass]="{'active': sidedarIsOpen}">
-    
-    <header>
-        <img [src]="logo" width="80" matTooltip="Logo Instituto de la Propiedad" matTooltipPosition="right">
-    </header>
+<aside id="sidebar" [ngClass]="{'expanded': sidedarIsOpen}">
 
-    <a routerLink="/buttons" routerLinkActive="active" matTooltip="Tipos de Botones" matTooltipPosition="right">
-        <mat-icon>dns</mat-icon>
-        <span>Botones</span>
-    </a>
-    <a href="#" routerLinkActive="active" matTooltip="Paleta de Colores" matTooltipPosition="right">
-        <mat-icon>color_lens</mat-icon>
-        <span>Paleta de Colores</span>
-    </a>
-    <a routerLink="/customer-new" routerLinkActive="active" matTooltip="Estilos de Formularios" matTooltipPosition="right">
-        <mat-icon>fact_check</mat-icon>
-        <span>Formularios</span>
-    </a>
-    <a routerLink="/typography" routerLinkActive="active" matTooltip="Estilos de Tipografía" matTooltipPosition="right">
-        <mat-icon>font_download</mat-icon>
-        <span>Tipografía</span>
-    </a>
-    <a routerLink="/customers" routerLinkActive="active" matTooltip="Estilos de Tablas" matTooltipPosition="right">
-        <mat-icon>table_view</mat-icon>
-        <span>Tablas</span>
-    </a>
-    <a routerLink="utilities" routerLinkActive="active" matTooltip="Utilidades" matTooltipPosition="right">
-        <mat-icon>apps</mat-icon>
-        <span>Utilidades</span>
-    </a>
+    <nav class="main-menu">
+        <header (click)="onSidebarCollapse()">
+            <img [src]="logo" width="80" matTooltipPosition="right">
+            <mat-icon *ngIf="sidedarIsOpen">chevron_right</mat-icon>
+            <mat-icon *ngIf="!sidedarIsOpen">chevron_left</mat-icon>
+        </header>
     
-</nav>
+        <a routerLink="/buttons" routerLinkActive="active" matTooltip="Tipos de Botones" matTooltipPosition="right">
+            <mat-icon>dns</mat-icon>
+            <span>Botones</span>
+        </a>
+        <a href="#" routerLinkActive="active" matTooltip="Paleta de Colores" matTooltipPosition="right">
+            <mat-icon>color_lens</mat-icon>
+            <span>olores</span>
+        </a>
+        <a routerLink="/customer-new" routerLinkActive="active" matTooltip="Estilos de Formularios" matTooltipPosition="right">
+            <mat-icon>fact_check</mat-icon>
+            <span>Formularios</span>
+        </a>
+        <a routerLink="/typography" routerLinkActive="active" matTooltip="Estilos de Tipografía" matTooltipPosition="right">
+            <mat-icon>font_download</mat-icon>
+            <span>Tipografía</span>
+        </a>
+        <a routerLink="/customers" routerLinkActive="active" matTooltip="Estilos de Tablas" matTooltipPosition="right">
+            <mat-icon>table_view</mat-icon>
+            <span>Tablas</span>
+        </a>
+        <a routerLink="utilities" routerLinkActive="active" matTooltip="Utilidades" matTooltipPosition="right">
+            <mat-icon>apps</mat-icon>
+            <span>Utilidades</span>
+        </a>
+        
+    </nav>
+
+    <nav class="submenu" *ngIf="sidedarIsOpen">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero rerum corrupti natus consectetur. Optio, laboriosam magni ratione, doloribus voluptas incidunt nulla asperiores reiciendis minus, eligendi cupiditate natus deserunt assumenda exercitationem!
+    </nav>
+    
+</aside>

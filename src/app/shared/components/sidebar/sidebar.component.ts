@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  public sidedarIsOpen = false;
   public logo = './assets/img/logo.png';
-  public sidedarIsOpen = true;
   
   constructor() { }
 
