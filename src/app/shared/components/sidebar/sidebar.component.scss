@@ -74,14 +74,17 @@
             }
         }
         a {
-            text-decoration: none;
             color: $gris-claro;
             padding: 1em 3em;
             display: flex;
             flex-direction: column;
+            transition: 0.4s;
+            text-decoration: none;
+            transition-property: background-color;
             
             &.active,
-            &.hover {
+            &:hover {
+                cursor: pointer;
                 color: $secundario;
                 background-color: $blanco;
             }

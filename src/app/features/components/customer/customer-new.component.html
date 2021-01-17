@@ -1,6 +1,7 @@
 <h1 class="titulo-principal animate__animated animate__fadeIn animate__faster">Ejemplo de Formulario</h1>
 
-<div class="row mat-elevation-z1 animate__animated animate__fadeIn animate__faster">
+<section class="row asw-box animate__animated animate__fadeIn animate__faster">
+    
     <article class="col-md-7 client-data">
         <h2 class="text-muted">Datos del Cliente</h2>
 
@@ -85,9 +86,10 @@
 
     <article class="col-md-5">
         <h2 class="text-muted">Data Capturada</h2>
-        <pre>{{ customerForm.value | json }}</pre>
+        <pre class="text-muted">{{ customerForm.value | json }}</pre>
 
         <h2 class="text-muted">Estado del Formulario</h2>
-        <pre><strong>Es válido?</strong>: {{ customerForm.valid ? 'Siii' : 'Noooo' }}</pre>
+        <pre class="text-muted"><strong>Es válido?</strong>: {{ customerForm.valid ? 'Siii' : 'Noooo' }}</pre>
     </article>
-</div>
+    
+</section>

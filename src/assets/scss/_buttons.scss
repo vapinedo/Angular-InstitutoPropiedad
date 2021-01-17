@@ -8,7 +8,7 @@
     min-width: 145px;
     padding: 8px 20px;
     border-radius: 3px;
-    transition: 0.3s;
+    transition: .3s;
     transition-property: background-color;    
 }
 
@@ -34,6 +34,10 @@
         border: 1px solid $blanco;
         outline: 1px solid $boton-hover;
     }
+    &:hover {
+        background-color: $boton-hover;
+        color: #fff;
+    }
 }
 
 .asw-btn-danger {
@@ -42,6 +46,10 @@
     &:focus {
         border: 1px solid $blanco;
         outline: 1px solid $boton-hover;
+    }
+    &:hover {
+        background-color: $rojo;
+        color: #fff;
     }
 }
 
