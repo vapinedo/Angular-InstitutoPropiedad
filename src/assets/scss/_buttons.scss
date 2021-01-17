@@ -15,10 +15,6 @@
 .asw-btn-primary {
     @include asw-btn($boton-principal, #fff, transparent);
 
-    &:focus {
-        border: 1px solid $blanco;
-        outline: 1px solid $boton-hover;
-    }
     &:hover {
         background-color: $boton-hover;
         outline-color: transparent;
@@ -30,10 +26,6 @@
 .asw-btn-secondary {
     @include asw-btn(#fff, $boton-principal, $boton-principal);
 
-    &:focus {
-        border: 1px solid $blanco;
-        outline: 1px solid $boton-hover;
-    }
     &:hover {
         background-color: $boton-hover;
         color: #fff;
@@ -43,14 +35,14 @@
 .asw-btn-danger {
     @include asw-btn(#fff, $rojo, $rojo);
 
-    &:focus {
-        border: 1px solid $blanco;
-        outline: 1px solid $boton-hover;
-    }
     &:hover {
         background-color: $rojo;
         color: #fff;
     }
+}
+
+button[disabled]    {
+    @include asw-btn(#a8a8a8, $blanco, #a8a8a8);
 }
 
 .asw-btn-group {
