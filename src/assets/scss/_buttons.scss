@@ -1,15 +1,19 @@
 @import "src/assets/scss/colors";
 
-
-.btn-principal {
-    border: 1px solid transparent;
-    background-color: $boton-principal;
-    color: $blanco;
+@mixin asw-btn($bgColor, $color, $borderColor) {
+    background-color: $bgColor;
+    border: 1px solid $borderColor;
+    color: $color;
     height: 34px;
+    min-width: 145px;
     padding: 8px 20px;
     border-radius: 3px;
     transition: 0.3s;
-    transition-property: background-color;
+    transition-property: background-color;    
+}
+
+.asw-btn-primary {
+    @include asw-btn($boton-principal, #fff, transparent);
 
     &:focus {
         border: 1px solid $blanco;
@@ -23,25 +27,25 @@
     }
 }
 
-.btn-secundario {
-    border: 1px solid $boton-principal;
-    background-color: #fff;
-    color: $boton-principal;
-    height: 34px;
-    padding: 8px 20px;
-    border-radius: 3px;
-    transition: 0.3s;
-    transition-property: background-color;
+.asw-btn-secondary {
+    @include asw-btn(#fff, $boton-principal, $boton-principal);
 
     &:focus {
         border: 1px solid $blanco;
         outline: 1px solid $boton-hover;
     }
-    &:hover {
-        color: $blanco;
-        background-color: $boton-hover;
-        outline-color: transparent;
-        border-color: transparent;
-        
+}
+
+.asw-btn-danger {
+    @include asw-btn(#fff, $rojo, $rojo);
+
+    &:focus {
+        border: 1px solid $blanco;
+        outline: 1px solid $boton-hover;
     }
+}
+
+.asw-btn-group {
+    display: flex;
+    gap: 1em;
 }
