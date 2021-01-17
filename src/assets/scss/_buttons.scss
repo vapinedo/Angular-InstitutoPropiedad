@@ -41,7 +41,7 @@
     }
 }
 
-button[disabled]    {
+.asw-btn[disabled]    {
     @include asw-btn(#a8a8a8, $blanco, #a8a8a8);
 }
 
