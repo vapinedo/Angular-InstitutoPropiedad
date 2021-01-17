@@ -11,8 +11,6 @@ export class DialogService {
     return Swal.fire(message);
   }
 
-  
-
   confirm(message: any): Promise<SweetAlertResult<any>> {
     return Swal.fire({ 
       icon: 'warning',
