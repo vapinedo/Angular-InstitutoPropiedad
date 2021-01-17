@@ -11,9 +11,8 @@
     &.expanded {
         display: flex;
         justify-content: space-between;
-        gap: 1.2em;
-        min-width: 260px;
-        max-width: 260px;
+        min-width: 280px;
+        max-width: 280px;
         text-align: center;
     }
 
@@ -33,6 +32,7 @@
         }
         a {
             align-items: center;
+            border-left: 3px solid transparent;
             color: $blanco;
             display: flex;
             flex-direction: column;
@@ -49,14 +49,42 @@
             }
             &:hover,
             &.active {
+                border-left-color: $blanco;
                 background-color: $secundario;
+                
             }
         }
     }
 
     .submenu {
         text-align: left;
-        padding-top: 20px;
-        padding-right: 20px;
+
+        header {
+            padding-top: 1.7em;
+            padding-left: 1.7em;
+            text-align: left;
+            margin-bottom: 1.7em;
+
+            h3 {
+                text-transform: uppercase;
+            }
+            span {
+                font-weight: bold;
+                color: $principal;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: $gris-claro;
+            padding: 1em 3em;
+            display: flex;
+            flex-direction: column;
+            
+            &.active,
+            &.hover {
+                color: $secundario;
+                background-color: $blanco;
+            }
+        }
     }
 }
