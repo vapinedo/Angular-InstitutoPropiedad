@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-submenu',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./styles.component.scss']
 })
 export class SubmenuComponent implements OnInit {
+
+  @Input() showSubmenu = false;
 
   constructor() { }
 

@@ -6,12 +6,14 @@ import { MaterialModule } from './modules/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { MainmenuComponent } from './components/sidebar/mainmenu.component';
+import { SubmenuComponent } from './components/sidebar/submenu.component';
 import { ProgressbarComponent } from './components/loaders/progressbar.component';
 import { SpinnerComponent } from './components/loaders/spinner.component';
 
 @NgModule({
   declarations: [
     MainmenuComponent,
+    SubmenuComponent,
     ProgressbarComponent,
     SpinnerComponent
   ],
@@ -23,6 +25,7 @@ import { SpinnerComponent } from './components/loaders/spinner.component';
   ],
   exports: [
     MainmenuComponent,
+    SubmenuComponent,
     ProgressbarComponent,
     SpinnerComponent,
     
