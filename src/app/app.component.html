@@ -1,7 +1,11 @@
-<div id="wrapper">
+<main id="wrapper">
   <app-mainmenu></app-mainmenu>  
 
-  <main class="container-fluid">
-    <router-outlet></router-outlet>
-  </main>
-</div>
+  <section class="container-fluid">
+    <app-breadcrumbs></app-breadcrumbs>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</main>

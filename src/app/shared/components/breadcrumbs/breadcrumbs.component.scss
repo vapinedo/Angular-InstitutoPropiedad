@@ -1,0 +1,22 @@
+#breadcrumb {
+
+    background-color: #f5f8fa;
+    border-bottom: 1px solid #c1c1c1;
+    list-style: none;
+    padding: 1.2em 2em;
+    width: 100%;
+
+    &:first-child:before {
+        display: none;
+    }
+    &:before {
+        content: '>';
+        vertical-align: top;
+        display: inline-block;
+        margin: 0 10px 0 8px;
+        -webkit-font-smoothing: antialiased;
+    }
+    .active {
+        color: #acadac;
+    }
+}

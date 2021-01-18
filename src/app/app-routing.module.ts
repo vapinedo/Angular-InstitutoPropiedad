@@ -9,12 +9,12 @@ import { UtilitiesComponent } from './features/components/utilities/utilities.co
 import { ColorsComponent } from './features/components/colors/colors.component';
 
 const routes: Routes = [
-  { path: 'customers', component: CustomerAdminComponent },
-  { path: 'customer-new', component: CustomerNewComponent },
-  { path: 'customer-edit/:id', component: CustomerEditComponent },
-  { path: 'typography', component: TypographyComponent },
-  { path: 'utilities', component: UtilitiesComponent },
-  { path: 'colors', component: ColorsComponent },
+  { path: 'customers', component: CustomerAdminComponent, data: { breadcrumb: 'Clientes' }},
+  { path: 'customer-new', component: CustomerNewComponent, data: { breadcrumb: 'Nuevo Cliente' }},
+  { path: 'customer-edit/:id', component: CustomerEditComponent, data: { breadcrumb: 'Actualizar Cliente' }},
+  { path: 'typography', component: TypographyComponent, data: { breadcrumb: 'Tipografía' }},
+  { path: 'utilities', component: UtilitiesComponent, data: { breadcrumb: 'Utilidades' }},
+  { path: 'colors', component: ColorsComponent, data: { breadcrumb: 'Colores' }},
   { path: '**', redirectTo: 'colors' }
 ];
 

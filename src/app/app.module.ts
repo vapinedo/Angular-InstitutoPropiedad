@@ -20,7 +20,6 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),    
-        
 
     AppRoutingModule,
     SharedModule,

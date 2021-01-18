@@ -41,15 +41,13 @@ export class CustomerAdminComponent implements OnInit, OnDestroy {
     this.showProgressBar = true;
     let dataSourceArr = this.dataSource.filteredData;
     const index = dataSourceArr.indexOf(customer, 0);
-    console.log(index);
 
     this.subscription2 = this.customerSvc.delete(customer.id)
       .subscribe( response => {
         if (index > -1) { 
-          console.log('salio')
           this.showProgressBar = false;
           dataSourceArr.splice(index, 1);
-          console.log(this.table.renderRows()); 
+          this.table.renderRows(); 
         }        
       });
   }
