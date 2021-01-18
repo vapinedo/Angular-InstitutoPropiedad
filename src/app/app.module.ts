@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from "@angular/fire";
 import { environment } from '../environments/environment';
 
-// Modulos
+// Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';

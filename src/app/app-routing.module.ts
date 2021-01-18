@@ -15,10 +15,11 @@ const routes: Routes = [
   { path: 'typography', component: TypographyComponent },
   { path: 'utilities', component: UtilitiesComponent },
   { path: 'colors', component: ColorsComponent },
-  { path: '**', redirectTo: 'customer-new' }
+  { path: '**', redirectTo: 'colors' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
