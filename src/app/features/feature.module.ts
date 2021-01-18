@@ -8,6 +8,7 @@ import { CustomerAdminComponent } from './components/customer/customer-admin.com
 import { CustomerEditComponent } from './components/customer/customer-edit.component';
 import { TypographyComponent } from './components/typography/typography.component';
 import { UtilitiesComponent } from './components/utilities/utilities.component';
+import { ColorsComponent } from './components/colors/colors.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UtilitiesComponent } from './components/utilities/utilities.component';
     CustomerAdminComponent,
     CustomerEditComponent,
     TypographyComponent,
-    UtilitiesComponent
+    UtilitiesComponent,
+    ColorsComponent
   ],
   imports: [
     CommonModule,

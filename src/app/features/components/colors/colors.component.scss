@@ -1,0 +1,17 @@
+@import "src/assets/scss/colors";
+
+section {
+    .bar {
+        display: flex;
+        justify-content: space-between;
+        
+        .info {
+            display: flex;
+            flex-direction: column;
+        }
+        .color {
+            border-radius: 5px;
+            height: 45px;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<h1 class="asw-h1">Colores</h1>
+
+<section class="row asw-box">
+
+    <h2 class="asw-h2 text-muted">Principales</h2>
+    <article class="bar mt-4" *ngFor="let color of mainColors">
+        <div class="info col-md-2">
+            <label class="text-muted">{{ color.name }}</label>
+            <span class="text-muted">
+                <strong>Código</strong> 
+                {{ color.code }}
+            </span>
+        </div>
+        <div class="color col-md-10" [ngStyle]="{ 'background-color': color.code }">
+        </div>
+    </article>    
+
+    <h2 class="asw-h2 text-muted mt-5">Feedback o Highlights</h2>
+    <article class="bar mt-4" *ngFor="let color of highlightsColors">
+        <div class="info col-md-2">
+            <label class="text-muted">{{ color.name }}</label>
+            <span class="text-muted">
+                <strong>Código</strong> 
+                {{ color.code }}
+            </span>
+        </div>
+        <div class="color col-md-10" [ngStyle]="{ 'background-color': color.code }">
+        </div>
+    </article>    
+
+    <h2 class="asw-h2 text-muted mt-5">Texto y Fondos</h2>
+    <article class="bar mt-4" *ngFor="let color of textColor">
+        <div class="info col-md-2">
+            <label class="text-muted">{{ color.name }}</label>
+            <span class="text-muted">
+                <strong>Código</strong> 
+                {{ color.code }}
+            </span>
+        </div>
+        <div class="color col-md-10" [ngStyle]="{ 'background-color': color.code }">
+        </div>
+    </article>    
+
+</section>
