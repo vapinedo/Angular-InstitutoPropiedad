@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { Customer } from 'src/app/shared/models/customer.model';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { CustomerService } from 'src/app/core/services/customer.service';
+import { DialogService } from 'src/app/core/services/dialog.service';
 
 @Component({
   selector: 'app-customer-admin',
@@ -24,17 +25,23 @@ export class CustomerAdminComponent implements OnInit, OnDestroy {
   @ViewChild(MatPaginator) paginator: any;
   @ViewChild(MatTable) table!: MatTable<any>;
 
-  constructor(private customerSvc: CustomerService) { }
+  constructor(
+    private dialogSvc: DialogService,
+    private customerSvc: CustomerService
+  ) { }
 
   ngOnInit(): void {
     this.showSpinner = true;
 
     this.subscription1 = this.customerSvc.getAll()
-      .subscribe(reponse => {
-        this.showSpinner = false;
-        this.dataSource = new MatTableDataSource(reponse);
-        this.dataSource.paginator = this.paginator;
-    });
+      .subscribe({
+        next: data => {
+          this.dataSource = new MatTableDataSource(data);
+          this.dataSource.paginator = this.paginator;
+        },
+        error: err => this.dialogSvc.error(err),
+        complete: () => this.showSpinner = false
+      });
   }
 
   onDeleteRow(customer: Customer) {
@@ -43,13 +50,16 @@ export class CustomerAdminComponent implements OnInit, OnDestroy {
     const index = dataSourceArr.indexOf(customer, 0);
 
     this.subscription2 = this.customerSvc.delete(customer.id)
-      .subscribe( response => {
+    .subscribe({
+      next: data => {
         if (index > -1) { 
-          this.showProgressBar = false;
           dataSourceArr.splice(index, 1);
           this.table.renderRows(); 
         }        
-      });
+      },
+      error: err => this.dialogSvc.error(err),
+      complete: () => this.showProgressBar = false
+    });
   }
 
   onSearch(event: Event) {
