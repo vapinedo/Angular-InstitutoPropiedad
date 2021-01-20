@@ -6,21 +6,23 @@ import { BreadcrumbModule } from 'angular-crumbs';
 import { MaterialModule } from './modules/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { HeaderComponent } from './components/header/header.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { MainmenuComponent } from './components/sidebar/mainmenu.component';
 import { SubmenuComponent } from './components/sidebar/submenu.component';
-import { ProgressbarComponent } from './components/loaders/progressbar.component';
-import { SpinnerComponent } from './components/loaders/spinner.component';
-import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SpinnerComponent } from './components/loaders/spinner.component';
+import { ProgressbarComponent } from './components/loaders/progressbar.component';
 
 @NgModule({
   declarations: [
+    HeaderComponent,
+    BreadcrumbsComponent,
     MainmenuComponent,
     SubmenuComponent,
-    ProgressbarComponent,
+    FooterComponent,
     SpinnerComponent,
-    BreadcrumbsComponent,
-    FooterComponent
+    ProgressbarComponent,
   ],
   imports: [
     CommonModule,
@@ -30,12 +32,13 @@ import { FooterComponent } from './components/footer/footer.component';
     ReactiveFormsModule
   ],
   exports: [
+    HeaderComponent,
+    BreadcrumbsComponent,
     MainmenuComponent,
     SubmenuComponent,
-    ProgressbarComponent,
-    SpinnerComponent,
-    BreadcrumbsComponent,
     FooterComponent,
+    SpinnerComponent,
+    ProgressbarComponent,
     
     CommonModule,
     RouterModule,
