@@ -1,0 +1,19 @@
+footer {
+    background-color: #3f4f97;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 1.5em;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    p  {
+        margin: 0;
+        font-size: 12px;
+        color: #fff;
+    }
+}

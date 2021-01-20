@@ -50,16 +50,16 @@ export class CustomerAdminComponent implements OnInit, OnDestroy {
     const index = dataSourceArr.indexOf(customer, 0);
 
     this.subscription2 = this.customerSvc.delete(customer.id)
-    .subscribe({
-      next: data => {
-        if (index > -1) { 
-          dataSourceArr.splice(index, 1);
-          this.table.renderRows(); 
-        }        
-      },
-      error: err => this.dialogSvc.error(err),
-      complete: () => this.showProgressBar = false
-    });
+      .subscribe({
+        next: data => {
+          if (index > -1) { 
+            dataSourceArr.splice(index, 1);
+            this.table.renderRows(); 
+          }        
+        },
+        error: err => this.dialogSvc.error(err),
+        complete: () => this.showProgressBar = false
+      });
   }
 
   onSearch(event: Event) {

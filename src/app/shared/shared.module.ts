@@ -11,6 +11,7 @@ import { SubmenuComponent } from './components/sidebar/submenu.component';
 import { ProgressbarComponent } from './components/loaders/progressbar.component';
 import { SpinnerComponent } from './components/loaders/spinner.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     SubmenuComponent,
     ProgressbarComponent,
     SpinnerComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     ProgressbarComponent,
     SpinnerComponent,
     BreadcrumbsComponent,
+    FooterComponent,
     
     CommonModule,
     RouterModule,
