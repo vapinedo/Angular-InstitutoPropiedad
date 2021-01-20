@@ -3,9 +3,9 @@ import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MatPaginator } from '@angular/material/paginator';
 import { Customer } from 'src/app/shared/models/customer.model';
+import { DialogService } from 'src/app/core/services/dialog.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { CustomerService } from 'src/app/core/services/customer.service';
-import { DialogService } from 'src/app/core/services/dialog.service';
 
 @Component({
   selector: 'app-customer-admin',
