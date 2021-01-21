@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  public titleFromBreadCrumbs: string;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getTitle(title: string): void {
+    this.titleFromBreadCrumbs = title;
   }
 
 }
