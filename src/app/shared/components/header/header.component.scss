@@ -1,0 +1,33 @@
+@import "src/assets/scss/colors";
+
+header {
+    background-color: #f5f8fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    border-bottom: 2px solid #f1e7e7;
+
+    h2 {
+        color: $alternativo;
+        margin: 0;
+    }
+
+    .toolbar {
+        display: flex;
+        background-color: #fff;
+        padding: .4em .7em;
+        border-radius: 4px;
+
+        i {
+            cursor: pointer;
+            color: $secundario;
+            margin-right: 15px;
+            font-size: 1.8em;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
