@@ -1,12 +1,14 @@
 <section class="row asw-box">
-    <div *ngIf="!showSpinner" class="flexbox">
-        <mat-form-field class="w-50 animate__animated animate__fadeIn animate__faster">
-            <mat-label class="flexbox-start filtro">
-                <mat-icon>search</mat-icon>
-                <span>| Buscar ...</span>
-            </mat-label>
-            <input matInput (keyup)="onSearch($event)" placeholder="Buscar ..." autocomplete="off" #inputSearch>
-        </mat-form-field>
+
+    <div *ngIf="!showSpinner" class="table-search">
+        <div class="input-search">
+            <mat-icon>search</mat-icon>
+            <input matInput 
+                #inputSearch
+                placeholder="Buscar ..." 
+                autocomplete="off" 
+                (keyup)="onSearch($event)">
+        </div>
         <button [routerLink]="['/customer-new']" class="asw-btn-primary">Crear</button>
     </div>
 
@@ -45,7 +47,7 @@
 
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let item" class="text-center" style="width: 140px">
+            <td mat-cell *matCellDef="let item" class="tools">
                 <i matTooltip="Actualizar"
                     [routerLink]="['/customer-edit', item.id]" 
                     class="material-icons-outlined asw-secondary">edit</i>
@@ -62,11 +64,17 @@
 
         <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+
         <tr class="mat-row" *matNoDataRow>
             <td class="mat-cell" colspan="4">No se encontraron registros</td>
         </tr>
     </table>
-    <mat-paginator *ngIf="!showSpinner" [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+
+    <mat-paginator 
+        *ngIf="!showSpinner" 
+        showFirstLastButtons
+        [pageSizeOptions]="[10, 20, 50, 100]">
+    </mat-paginator>
 
     <app-spinner *ngIf="showSpinner"></app-spinner>
 </section>

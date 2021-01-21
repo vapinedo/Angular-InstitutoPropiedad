@@ -62,5 +62,18 @@ html {
             font-size: 13px;
             line-height: 18px;
         }
+        .mat-table {
+            thead th {
+                font-family: 'keep_calmbook', sans-serif;
+            }
+            tbody tr {
+                color: $negro-claro;
+                font-family: 'keep_calm_medregular', sans-serif;
+
+                td {
+                    font-size: 13px;
+                }
+            } 
+        }
     }
 }
