@@ -1,7 +1,7 @@
 @import "src/assets/scss/colors";
 
 @font-face {
-    font-family: 'keep_calmbook';
+    font-family: 'c';
     src: url('fonts/keep_calm_book-webfont.woff2') format('woff2'), url('fonts/keep_calm_book-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -32,6 +32,7 @@ html {
     height: 100%;
 
     body {
+        font-family: 'keep_calmbook', sans-serif;
         color: $negro-claro;
         font-size: 16px;
         height: 100%;
@@ -50,7 +51,7 @@ html {
             margin-bottom: 25px;
         }
         h2 {
-            font-family: 'keep_calmbook', sans-serif;
+            font-family: 'keep_calm_medregular', sans-serif;
             color: $principal;
             font-size: 20px;
             line-height: 23px;
