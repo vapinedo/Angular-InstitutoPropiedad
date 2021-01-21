@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
+
 import { Subscription } from 'rxjs';
+import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { Customer } from 'src/app/shared/models/customer.model';
 import { DialogService } from 'src/app/core/services/dialog.service';
@@ -21,9 +23,10 @@ export class CustomerAdminComponent implements OnInit, OnDestroy {
   public showSpinner = false;
   public showProgressBar = false;
 
-  displayColumns = ['name', 'lastname', 'email', 'gender', 'birthdate', 'category', 'id'];
   @ViewChild(MatPaginator) paginator: any;
   @ViewChild(MatTable) table!: MatTable<any>;
+  selection = new SelectionModel<Customer>(true, []);
+  displayColumns = ['select', 'name', 'lastname', 'email', 'gender', 'birthdate', 'category', 'id'];
 
   constructor(
     private dialogSvc: DialogService,
@@ -44,7 +47,7 @@ export class CustomerAdminComponent implements OnInit, OnDestroy {
       });
   }
 
-  onDeleteRow(customer: Customer) {
+  onDeleteRow(customer: Customer): void {
     this.showProgressBar = true;
     let dataSourceArr = this.dataSource.filteredData;
     const index = dataSourceArr.indexOf(customer, 0);
@@ -62,9 +65,29 @@ export class CustomerAdminComponent implements OnInit, OnDestroy {
       });
   }
 
-  onSearch(event: Event) {
+  onSearch(event: Event): void {
     const queryString = (event.target as HTMLInputElement).value;
     this.dataSource.filter = queryString.trim().toLowerCase();
+  }
+
+   isAllSelected(): boolean {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+  masterToggle(): void {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.data.forEach(row => this.selection.select(row));
+  }
+
+  checkboxLabel(row?: Customer) {
+    // console.log(row)
+    // if (!row) {
+    //   return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
+    // }
+    // return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
   }
 
   ngOnDestroy(): void {
