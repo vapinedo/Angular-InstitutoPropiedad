@@ -1,0 +1,19 @@
+.mat-table {
+    width: 100%; 
+
+    thead tr {
+        border: none;
+        background-color: #f5f8fa;
+
+        th {
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 1.38;
+            letter-spacing: normal;
+            color: #adadad;
+        }
+    } 
+    tr {
+        border-bottom: 1px solid blue !important;
+    }
+}
