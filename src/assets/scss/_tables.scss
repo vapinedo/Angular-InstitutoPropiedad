@@ -39,7 +39,9 @@
             }
         }
         tr, td {
+            text-align: left;
             padding: 1.2em 1em;
+            padding-left: 0;
             border-bottom: 1px solid #f5f8fa;
         }
     }
