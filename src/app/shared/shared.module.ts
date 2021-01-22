@@ -13,6 +13,7 @@ import { SubmenuComponent } from './components/sidebar/submenu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SpinnerComponent } from './components/loaders/spinner.component';
 import { ProgressbarComponent } from './components/loaders/progressbar.component';
+import { NotificationsMenuComponent } from './components/notifications-menu/notifications-menu.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ProgressbarComponent } from './components/loaders/progressbar.component
     FooterComponent,
     SpinnerComponent,
     ProgressbarComponent,
+    NotificationsMenuComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +41,7 @@ import { ProgressbarComponent } from './components/loaders/progressbar.component
     FooterComponent,
     SpinnerComponent,
     ProgressbarComponent,
+    NotificationsMenuComponent,
     
     CommonModule,
     RouterModule,
