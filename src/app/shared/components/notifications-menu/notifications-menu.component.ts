@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotificationsMenuComponent implements OnInit {
 
+  public menuIsOpen = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onMenuCollapse() {
+    console.log(this.menuIsOpen);
+    this.menuIsOpen = !this.menuIsOpen;
+  }
 }
