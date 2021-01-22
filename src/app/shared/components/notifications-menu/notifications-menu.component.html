@@ -1,11 +1,11 @@
-<aside id="notifications-menu" [ngClass]="{'expanded': menuIsOpen}">
+<aside id="notifications-menu" [ngClass]="{'expanded': menuIsOpen }">
     <nav>
         <header>
             <div class="title">
                 <i class="material-icons-outlined">notifications</i>
                 <h2>Notificaciones</h2>
             </div>
-            <span (click)="onMenuCollapse()" class="close-menu">
+            <span (click)="menuIsOpen=false" class="close-menu">
                 <i class="material-icons-outlined">clear</i>
             </span>
         </header>

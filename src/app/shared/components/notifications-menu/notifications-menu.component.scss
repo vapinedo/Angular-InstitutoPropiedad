@@ -5,14 +5,14 @@
     background-color: #fff;
     height: 100%;
     box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
-    position: absolute;
+    position: fixed;
     right: -280px;
-    min-width: 0;
-    transition: all 0.3s;
+    width: 280px;
     z-index: 100;
+    transition: all 0.3s;
 
     &.expanded {
-        width: 280px;
+        right: 0;
     }
 
     nav {
