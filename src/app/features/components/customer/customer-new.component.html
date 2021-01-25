@@ -43,7 +43,7 @@
                 </mat-error>
             </mat-form-field>
 
-            <mat-form-field appearance="fill">
+            <mat-form-field>
                 <mat-label>Seleccionar Categoría</mat-label>
                 <mat-select formControlName="category">
                   <mat-option *ngFor="let category of customerCategory" [value]="category.value">{{ category.viewValue }}</mat-option>
