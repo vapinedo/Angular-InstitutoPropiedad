@@ -1,42 +1,42 @@
 @import "src/assets/scss/colors";
 
 @font-face {
-    font-family: 'c';
-    src: url('fonts/keep_calm_book-webfont.woff2') format('woff2'), url('fonts/keep_calm_book-webfont.woff') format('woff');
-    font-weight: normal;
     font-style: normal;
+    font-weight: normal;
+    font-family: 'keep_calmbook';
+    src: url('fonts/keep_calm_book-webfont.woff2') format('woff2'), url('fonts/keep_calm_book-webfont.woff') format('woff');
 }
 
 @font-face {
+    font-style: normal;
+    font-weight: normal;
     font-family: 'keep_calmheavy';
     src: url('fonts/keep_calm_heavy-webfont.woff2') format('woff2'), url('fonts/keep_calm_heavy-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
+    font-style: normal;
+    font-weight: normal;
     font-family: 'keep_calmlight';
     src: url('fonts/keep_calm_light-webfont.woff2') format('woff2'), url('fonts/keep_calm_light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
+    font-style: normal;
+    font-weight: normal;
     font-family: 'keep_calm_medregular';
     src: url('fonts/keep_calm_medium-webfont.woff2') format('woff2'), url('fonts/keep_calm_medium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 html {
     height: 100%;
 
     body {
-        font-family: 'keep_calmbook', sans-serif;
-        color: $negro-claro;
-        font-size: 16px;
-        height: 100%;
         margin: 0;
+        height: 100%;
+        font-size: 16px;
+        color: $negro-400;
+        font-family: 'keep_calmbook', sans-serif;
 
         h1, h2, h3, h4, h5, h6 {
             padding: 0;
@@ -44,24 +44,24 @@ html {
         }
 
         h1 {
-            font-family: 'keep_calmbook', sans-serif;
-            color: $principal;
             font-size: 25px;
+            color: $azul-500;
             line-height: 23px;
             margin-bottom: 25px;
+            font-family: 'keep_calmbook', sans-serif;
         }
         h2 {
-            font-family: 'keep_calm_medregular', sans-serif;
-            color: $principal;
             font-size: 20px;
+            color: $azul-500;
             line-height: 23px;
             margin-bottom: 25px;
+            font-family: 'keep_calm_medregular', sans-serif;
         }
         button {
             color: $blanco;
-            font-family: 'keep_calmbook';
             font-size: 14px;
             line-height: 18px;
+            font-family: 'keep_calmbook';
         }
         .mat-table {
             thead th {
@@ -69,7 +69,7 @@ html {
                 font-family: 'keep_calmbook', sans-serif;
             }
             tbody tr {
-                color: $negro-claro;
+                color: $negro-400;
                 font-family: 'keep_calm_medregular', sans-serif;
 
                 td {

@@ -1,11 +1,7 @@
 @import "src/assets/scss/colors";
 
 .asw-box {
-    border-radius: 5px;
     padding: 24px;
+    border-radius: 5px;
     box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
 }
-
-.asw-primary { color: $principal; }
-.asw-secondary { color: $secundario; }
-.asw-danger { color: $alternativo; }

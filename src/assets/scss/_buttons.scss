@@ -10,46 +10,46 @@
     &[color="primary"] {
         color: $blanco !important;
         border-color: transparent !important;
-        background-color: $boton-principal !important;
+        background-color: $azul-200 !important;
     
         &:focus {
             outline: none !important;
             border-color: $blanco !important;
-            background-color: $boton-principal !important;
-            box-shadow: 0 0 0 1px $boton-principal !important;
+            background-color: $azul-200 !important;
+            box-shadow: 0 0 0 1px $azul-200 !important;
         }
         &:hover {
             outline: none !important;
             box-shadow: none!important;
             border-color: transparent !important;
-            background-color: $boton-hover !important;
+            background-color: $azul-400 !important;
         }
     }    
 
     &[color="accent"] {
-        color: $boton-principal !important;
+        color: $azul-200 !important;
         background-color: $blanco !important;
-        border-color: $boton-hover !important;
+        border-color: $azul-400 !important;
             
         &:focus, 
         &:hover {
             outline: none !important;
-            color: $boton-hover !important;
-            box-shadow: 0 0 0 .4px $boton-hover !important;
+            color: $azul-400 !important;
+            box-shadow: 0 0 0 .4px $azul-400 !important;
         }
     }
 
     &[color="warn"] {
-        color: $rojo !important;
-        border-color: $rojo !important;
+        color: $rojo-500 !important;
+        border-color: $rojo-500 !important;
         background-color: $blanco !important;
     
         &:focus,
         &:hover {
             outline: none !important;
-            border-color: $rojo !important;
+            border-color: $rojo-500 !important;
             background-color: $blanco !important;
-            box-shadow: 0 0 0 1px $rojo !important;
+            box-shadow: 0 0 0 1px $rojo-500 !important;
         }    
     }
 

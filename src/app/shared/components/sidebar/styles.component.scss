@@ -17,7 +17,7 @@
     }
 
     .main-menu {
-        background-color: $principal;
+        background-color: $azul-500;
         display: block;
         height: 100%;
         width: 94px;
@@ -53,7 +53,7 @@
             &:hover,
             &.active {
                 border-left-color: $blanco;
-                background-color: $secundario;
+                background-color: $azul-300;
                 
             }
         }
@@ -70,7 +70,7 @@
         margin-bottom: 1.7em;
 
         h3 {
-            color: $principal;
+            color: $azul-500;
             font-size: 15px;
             font-family: 'keep_calmbook', sans-serif;
             text-transform: uppercase;
@@ -79,13 +79,13 @@
         span {
             font-family: 'keep_calm_medregular', sans-serif;
             font-size: 12px;
-            color: $principal;
+            color: $azul-500;
         }
     }
     a {
         font-size: 12px;
         font-family: 'keep_calmlight', sans-serif;
-        color: $principal;
+        color: $azul-500;
         padding: 1em 3em;
         display: flex;
         flex-direction: column;
