@@ -29,26 +29,17 @@
 
 .asw-btn-secondary {
     @include asw-btn(#fff, $boton-principal, $boton-principal);
-    &:focus {
-        border: 1.5px double $boton-hover;
-        color: $boton-hover;
-        outline: none;
-        line-height: 5px;
-    }
+    &:focus, 
     &:hover {
         color: $boton-hover;
         box-shadow: 0 0 0 .4px $boton-hover;
+        outline: none;
     }
 }
 
 .asw-btn-danger {
     @include asw-btn(#fff, $rojo, $rojo);
-    &:focus {
-        border: 1.5px double $rojo;
-        color: $rojo;
-        outline: none;
-        line-height: 5px;
-    }
+    &:focus,
     &:hover {
         border-color: $rojo;
         background-color: #fff;
