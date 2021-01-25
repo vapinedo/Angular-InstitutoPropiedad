@@ -14,36 +14,50 @@
 
 .asw-btn-primary {
     @include asw-btn($boton-principal, #fff, transparent);
-
+    &:focus {
+        border-color: #fff;
+        background-color: $boton-principal;
+        box-shadow: 0 0 0 1px $boton-principal;
+        outline: none;
+    }
     &:hover {
-        background-color: $boton-hover;
-        outline-color: transparent;
         border-color: transparent;
-        
+        box-shadow: none;
+        background-color: $boton-hover;
     }
 }
 
 .asw-btn-secondary {
     @include asw-btn(#fff, $boton-principal, $boton-principal);
-
+    &:focus {
+        border: 1.5px double $boton-hover;
+        color: $boton-hover;
+        outline: none;
+        line-height: 5px;
+    }
     &:hover {
-        background-color: $boton-hover;
-        color: #fff;
+        color: $boton-hover;
+        box-shadow: 0 0 0 .4px $boton-hover;
     }
 }
 
 .asw-btn-danger {
     @include asw-btn(#fff, $rojo, $rojo);
-
-    &:hover {
-        background-color: $rojo;
-        color: #fff;
+    &:focus {
+        border: 1.5px double $rojo;
+        color: $rojo;
+        outline: none;
+        line-height: 5px;
     }
+    &:hover {
+        border-color: $rojo;
+        background-color: #fff;
+        box-shadow: 0 0 0 1px $rojo;
+        outline: none;
+    }    
 }
 
-.asw-btn[disabled]    {
-    @include asw-btn(#a8a8a8, $blanco, #a8a8a8);
-}
+.asw-btn[disabled] { @include asw-btn(#a8a8a8, $blanco, #a8a8a8); }
 
 .asw-btn-group {
     display: flex;
