@@ -9,7 +9,7 @@
                 autocomplete="off" 
                 (keyup)="onSearch($event)">
         </div>
-        <button [routerLink]="['/customer-new']" class="asw-btn-primary">Crear</button>
+        <button [routerLink]="['/customer-new']" mat-raised-button color="primary">Crear</button>
     </div>
 
     <app-progressbar *ngIf="showProgressBar"></app-progressbar>

@@ -75,7 +75,8 @@
             <button 
                 type="submit" 
                 color="primary"
-                mat-raised-button>
+                mat-raised-button
+                [disabled]="!customerForm.valid">
                 Enviar Datos
             </button>
         </form>
