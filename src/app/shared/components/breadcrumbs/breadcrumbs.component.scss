@@ -1,11 +1,12 @@
 #breadcrumb {
 
+    margin: 0;
+    width: 100%;
+    font-size: 13px;
+    list-style: none;
+    padding: .8em 2.3em;
     background-color: #f5f8fa;
     border-bottom: 1px solid #ede6e6;
-    list-style: none;
-    padding: .8em 2em;
-    width: 100%;
-    margin: 0;
 
     &:first-child:before {
         display: none;
@@ -13,8 +14,8 @@
     &:before {
         content: '>';
         vertical-align: top;
-        display: inline-block;
         margin: 0 10px 0 8px;
+        display: inline-block;
         -webkit-font-smoothing: antialiased;
     }
     .active {

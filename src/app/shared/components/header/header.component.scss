@@ -10,7 +10,14 @@ header {
 
     h2 {
         margin: 0;
+        gap: .5em;
+        display: flex;
         color: $verde-500;
+        align-items: center;
+
+        i {
+            font-size: 1.5em;
+        }
     }
 
     .toolbar {
