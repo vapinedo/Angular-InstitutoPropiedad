@@ -1,13 +1,15 @@
+@import "src/assets/scss/colors";
+
 .table-search {
     padding: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: .7em;
+    align-items: center;
+    justify-content: space-between;
 
     .input-search {
-        padding-left: 1em;
         display: flex;
+        padding-left: 1em;
         align-items: center;
         justify-content: flex-start;
 
@@ -15,10 +17,10 @@
             color: #adadad;
         }
         input {
-            margin-left: .7em;
-            border-left: 1px solid #adadad;
-            padding-left: .7em;
             color: #adadad;
+            margin-left: .7em;
+            padding-left: .7em;
+            border-left: 1px solid #adadad;
         }
     }
 }
@@ -43,9 +45,9 @@
             }
         }
         tr, td {
+            padding-left: 0;
             text-align: left;
             padding: 1.2em 1em;
-            padding-left: 0;
             border-bottom: 1px solid #f5f8fa;
         }
     }
