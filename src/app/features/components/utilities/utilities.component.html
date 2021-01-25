@@ -2,19 +2,19 @@
     <article>
         <h2 class="text-muted">Botones</h2>
         <div class="asw-btn-group">
-            <button class="asw-btn-primary">Botón Principal</button>
-            <button class="asw-btn-secondary">Botón Secundario</button>
-            <button class="asw-btn-danger">Botón Danger</button>
-            <button class="asw-btn" disabled>Botón Bloqueado</button>
+            <button mat-raised-button color="primary">Botón Principal</button>
+            <button mat-raised-button color="accent">Botón Secundario</button>
+            <button mat-raised-button color="warn">Botón Danger</button>
+            <button mat-raised-button disabled>Botón Bloqueado</button>
         </div>
     </article>
 
     <article>
         <h2 class="text-muted mt-5">Dialogs</h2>    
         <div class="asw-btn-group">
-            <button (click)="onDialogSimple()" class="asw-btn-primary">Simple</button>
-            <button (click)="onDialogConfirm()" class="asw-btn-secondary">Confirm</button>
-            <button (click)="onDialogError()" class="asw-btn-danger">Error</button>
+            <button mat-raised-button color="primary" (click)="onDialogSimple()">Simple</button>
+            <button mat-raised-button color="accent" (click)="onDialogConfirm()">Confirm</button>
+            <button mat-raised-button color="warn" (click)="onDialogError()">Error</button>
         </div>
     </article>
 </section>
