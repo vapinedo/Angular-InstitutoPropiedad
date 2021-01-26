@@ -10,8 +10,8 @@ import { fromEvent, Subscription } from 'rxjs';
 export class NotificationsMenuComponent implements OnInit, OnDestroy {
 
   public showNotificationMenu = false;
-  private trigger = 'notifications-icon';
   private subscription = new Subscription();
+  private trigger = 'notifications-icon'; // On headerComponent HTML Template
 
   constructor() {}
 
@@ -26,7 +26,6 @@ export class NotificationsMenuComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log('notification menu has been destroyed');
     this.subscription.unsubscribe();
   }
 }
