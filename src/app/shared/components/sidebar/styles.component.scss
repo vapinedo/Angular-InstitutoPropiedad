@@ -50,12 +50,11 @@
             span {
                 margin-top: 12px;
             }
-            &:hover,
             &.active {
                 border-left-color: $blanco;
                 background-color: $azul-300;
-                
             }
+            &:hover { background-color: $azul-300; }
         }
     }
 }
