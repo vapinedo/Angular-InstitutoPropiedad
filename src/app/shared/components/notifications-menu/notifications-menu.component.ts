@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { Subscription } from 'rxjs';
-import { NotificationMenu } from '../../../core/services/notification-menu.service';
+import { fromEvent, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-notifications-menu',
@@ -10,18 +9,24 @@ import { NotificationMenu } from '../../../core/services/notification-menu.servi
 })
 export class NotificationsMenuComponent implements OnInit, OnDestroy {
 
-  public menuIsOpen = false;
-  private subscription1 = new Subscription();
+  public showNotificationMenu = false;
+  private trigger = 'notifications-icon';
+  private subscription = new Subscription();
 
-  constructor(private notificationMenuSvc: NotificationMenu) { 
-    this.subscription1 = this.notificationMenuSvc.showMenu$
-      .subscribe(data => this.menuIsOpen = data);
-  }
+  constructor() {}
 
   ngOnInit(): void {
+    const element = document.getElementById(this.trigger);
+    const clickOnNotificationsIcon = fromEvent(element, 'click');
+
+    this.subscription = clickOnNotificationsIcon
+      .subscribe((event: MouseEvent) => {
+        this.showNotificationMenu = !this.showNotificationMenu
+      });
   }
 
-  ngOnDestroy() {
-    this.subscription1.unsubscribe();
+  ngOnDestroy(): void {
+    console.log('notification menu has been destroyed');
+    this.subscription.unsubscribe();
   }
 }

@@ -6,7 +6,8 @@
     <nav class="toolbar">
         <i class="material-icons-outlined" matTooltip="Centro de Ayuda">help_center</i>
         <i class="material-icons-outlined" matTooltip="Historial">history</i>
-        <i (click)="onOpenMenu()" class="material-icons-outlined" matTooltip="Notificaciones">notifications</i>
+        <i id="notifications-icon" class="material-icons-outlined" matTooltip="Notificaciones">notifications</i>
     </nav>
 </header>
+
 <app-breadcrumbs (onTitleChange)="getTitle($event)"></app-breadcrumbs>
