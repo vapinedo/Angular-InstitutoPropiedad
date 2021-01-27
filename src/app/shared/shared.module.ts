@@ -15,39 +15,28 @@ import { SpinnerComponent } from './components/loaders/spinner.component';
 import { ProgressbarComponent } from './components/loaders/progressbar.component';
 import { NotificationsMenuComponent } from './components/notifications-menu/notifications-menu.component';
 
+const components = [
+  HeaderComponent,
+  BreadcrumbsComponent,
+  MainmenuComponent,
+  SubmenuComponent,
+  FooterComponent,
+  SpinnerComponent,
+  ProgressbarComponent,
+  NotificationsMenuComponent,  
+];
+
+const modules = [
+  CommonModule,
+  RouterModule,
+  BreadcrumbModule,
+  MaterialModule,
+  ReactiveFormsModule  
+];
+
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    BreadcrumbsComponent,
-    MainmenuComponent,
-    SubmenuComponent,
-    FooterComponent,
-    SpinnerComponent,
-    ProgressbarComponent,
-    NotificationsMenuComponent,
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    BreadcrumbModule,
-    MaterialModule,
-    ReactiveFormsModule
-  ],
-  exports: [
-    HeaderComponent,
-    BreadcrumbsComponent,
-    MainmenuComponent,
-    SubmenuComponent,
-    FooterComponent,
-    SpinnerComponent,
-    ProgressbarComponent,
-    NotificationsMenuComponent,
-    
-    CommonModule,
-    RouterModule,
-    BreadcrumbModule,
-    MaterialModule,
-    ReactiveFormsModule
-  ]
+  declarations: [components],
+  imports: [modules],
+  exports: [components, modules]
 })
 export class SharedModule { }

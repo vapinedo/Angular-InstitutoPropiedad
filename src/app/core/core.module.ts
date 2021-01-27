@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { CustomerService } from './services/customer.service';
 import { DialogService } from './services/dialog.service';
+import { DatetimeService } from './services/datetime.service';
 
 @NgModule({
   imports: [
@@ -10,7 +11,8 @@ import { DialogService } from './services/dialog.service';
   ],
   providers: [
     CustomerService,
-    DialogService
+    DialogService,
+    DatetimeService
   ]
 })
 export class CoreModule { }
