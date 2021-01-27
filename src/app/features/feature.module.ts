@@ -10,18 +10,18 @@ import { TypographyComponent } from './components/typography/typography.componen
 import { UtilitiesComponent } from './components/utilities/utilities.component';
 import { ColorsComponent } from './components/colors/colors.component';
 
+const components = [
+  CustomerNewComponent,
+  CustomerAdminComponent,
+  CustomerEditComponent,
+  TypographyComponent,
+  UtilitiesComponent,
+  ColorsComponent
+];
+
 @NgModule({
-  declarations: [
-    CustomerNewComponent,
-    CustomerAdminComponent,
-    CustomerEditComponent,
-    TypographyComponent,
-    UtilitiesComponent,
-    ColorsComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule
-  ]
+  declarations: [components],
+  exports: [components],
+  imports: [CommonModule, SharedModule]
 })
 export class FeatureModule { }
