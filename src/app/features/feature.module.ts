@@ -9,6 +9,7 @@ import { CustomerEditComponent } from './components/customer/customer-edit.compo
 import { TypographyComponent } from './components/typography/typography.component';
 import { UtilitiesComponent } from './components/utilities/utilities.component';
 import { ColorsComponent } from './components/colors/colors.component';
+import { DashboardComponent } from './components/dashboard.component';
 
 const components = [
   CustomerNewComponent,
@@ -16,7 +17,8 @@ const components = [
   CustomerEditComponent,
   TypographyComponent,
   UtilitiesComponent,
-  ColorsComponent
+  ColorsComponent,
+  DashboardComponent
 ];
 
 @NgModule({
