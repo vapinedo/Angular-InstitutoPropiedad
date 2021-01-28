@@ -4,7 +4,7 @@ import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
-import { Customer } from 'src/app/shared/models/customer.model';
+import { Customer } from 'src/app/core/models/customer.model';
 import { DialogService } from 'src/app/core/services/dialog.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { CustomerService } from 'src/app/core/services/customer.service';

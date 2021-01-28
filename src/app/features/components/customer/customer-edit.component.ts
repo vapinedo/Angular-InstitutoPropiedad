@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { Customer } from 'src/app/shared/models/customer.model';
+import { Customer } from 'src/app/core/models/customer.model';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { CustomerService } from 'src/app/core/services/customer.service';
 
