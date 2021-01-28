@@ -9,8 +9,8 @@ import { UtilitiesComponent } from './features/components/utilities/utilities.co
 import { ColorsComponent } from './features/components/colors/colors.component';
 import { DashboardComponent } from './features/components/dashboard.component';
 
-import { LoginComponent } from './auth/login.component';
-import { RegisterComponent } from './auth/register.component';
+import { LoginComponent } from './auth/components/login/login.component';
+import { RegisterComponent } from './auth/components/register/register.component';
 
 const routes: Routes = [
   { 
@@ -23,14 +23,11 @@ const routes: Routes = [
       { path: 'typography', component: TypographyComponent, data: { breadcrumb: 'Tipografía' }},
       { path: 'utilities', component: UtilitiesComponent, data: { breadcrumb: 'Utilidades' }},
       { path: 'colors', component: ColorsComponent, data: { breadcrumb: 'Colores' }},
-      { path: '**', redirectTo: 'customers' }
     ]
   },
-
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-
-  { path: '**', redirectTo: 'dashboard' }
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
