@@ -12,6 +12,7 @@ export class LoginComponent {
 
   public loginForm: FormGroup;
   public bgImage = '../../../assets/img/bg-login.jpg';
+  public logo = '../../../assets/img/logo.png';
   readonly VALID_EMAIL_STRING = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   constructor( 

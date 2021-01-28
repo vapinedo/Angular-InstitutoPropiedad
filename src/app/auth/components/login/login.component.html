@@ -1,14 +1,16 @@
 <section class="container-login">
-    <img [src]="bgImage">
+    <img [src]="bgImage" class="bg-image">
 
     <app-navbar></app-navbar>
 
     <div class="asw-box login">
-        <h1 class="text-center">Iniciar Sesión</h1>
-    
+        <header>
+            <img [src]="logo">
+        </header>
+
         <form [formGroup]="loginForm" (ngSubmit)="onLogin()" autocomplete="off">
             <mat-form-field>
-                <mat-label>Email</mat-label>
+                <mat-label>Usuario</mat-label>
                 <input matInput type="text" formControlName="email">
                 <mat-error *ngIf="email?.invalid && (email?.dirty || email?.touched)">
                     <span *ngIf="email?.errors?.required">Email es requerido</span>
@@ -16,27 +18,24 @@
                 </mat-error>
             </mat-form-field>       
     
-            <mat-form-field>
+            <mat-form-field class="mb-3">
                 <mat-label>Contraseña</mat-label>
                 <input matInput type="password" formControlName="password">
                 <mat-error *ngIf="password?.invalid && (password?.dirty || password?.touched)">
                     <span *ngIf="password?.errors?.required">Contraseña es requerida</span>
                 </mat-error>            
             </mat-form-field>       
-                
-            <div class="text-center mt-4">
+
+            <mat-checkbox class="remember">Recordar contraseña</mat-checkbox>
+
+            <div class="footer">
                 <button 
                     type="submit" 
                     color="primary"
-                    mat-raised-button 
-                    [disabled]="!loginForm.valid">
-                    <span>Acceder</span>
+                    mat-raised-button>
+                    <span>Ingresar</span>
                 </button>
-    
-                <div class="info">
-                    <a [routerLink]="['/reestablecer-password']">Olvidé la contraseña</a>
-                    <a [routerLink]="['/registro']">Crear una cuenta</a>
-                </div>
+                <a [routerLink]="['/reestablecer-password']">¿Olvidó su contraseña?</a>
             </div>
         </form>
     </div>

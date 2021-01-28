@@ -8,7 +8,7 @@
     right: -280px;
     position: fixed;
     transition: all 0.3s;
-    background-color: $blanco;
+    background-color: $blanco-500;
     box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
 
     &.expanded {
@@ -40,7 +40,7 @@
                 width: 64px;
                 height: 54px;
                 display: flex;
-                color: $blanco;
+                color: $blanco-500;
                 align-items: center;
                 justify-content: center;
                 background-color: $azul-300;

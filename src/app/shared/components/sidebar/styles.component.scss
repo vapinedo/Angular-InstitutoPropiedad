@@ -28,7 +28,7 @@
             padding: 10px; 
 
             mat-icon {
-                color: #fff;
+                color: $blanco-500;
             }
         }
         a {
@@ -36,7 +36,7 @@
             font-family: 'keep_calmlight', sans-serif;
             align-items: center;
             border-left: 3px solid transparent;
-            color: $blanco;
+            color: $blanco-500;
             display: flex;
             flex-direction: column;
             padding: 20px 10px;
@@ -45,13 +45,13 @@
             transition-property: background-color;
     
             mat-icon {
-                color: $blanco;
+                color: $blanco-500;
             }
             span {
                 margin-top: 12px;
             }
             &.active {
-                border-left-color: $blanco;
+                border-left-color: $blanco-500;
                 background-color: $azul-300;
             }
             &:hover { background-color: $azul-300; }
@@ -96,7 +96,7 @@
         &:hover {
             font-family: 'keep_calmbook', sans-serif;
             cursor: pointer;
-            background-color: $blanco;
+            background-color: $blanco-500;
         }
     }
 }
