@@ -1,21 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 import { v4 as uuidv4} from 'uuid';
+import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/models/user.model';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DatetimeService } from 'src/app/core/services/datetime.service';
 import { AuthService } from '../../../core/services/auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogService } from '../../../core/services/dialog.service';
+import { DatetimeService } from 'src/app/core/services/datetime.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['../shared-styles.component.scss']
+  styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnDestroy {
 
   public loginForm: FormGroup;
+  public subscription = new Subscription();
   public logo = '../../../assets/img/logo.png';
   public bgImage = '../../../assets/img/bg-login.jpg';
   readonly VALID_EMAIL_STRING = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -43,8 +45,8 @@ export class LoginComponent {
 
   onLogin() {
     if (this.loginForm.valid) {
+      let user: User;
       const { email, password } = this.loginForm.value;
-      let user = new User();
  
       user.id = uuidv4();
       user.email = email;
@@ -52,7 +54,7 @@ export class LoginComponent {
       user.createdAt = this.datetimeSvc.getUnixTime();
       user.lastLogin = user.createdAt;
 
-      this.authSvc.create(user)
+      this.subscription = this.authSvc.create(user)
         .subscribe({
           next: data => console.log(data),
           error: err => this.dialogSvc.error(err),
@@ -60,6 +62,10 @@ export class LoginComponent {
         }); 
     }
     return;
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }
