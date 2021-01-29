@@ -1,9 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
 
-import { v4 as uuidv4} from 'uuid';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/models/user.model';
+import { UserService } from '../../../core/services/user.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogService } from '../../../core/services/dialog.service';
@@ -25,9 +25,9 @@ export class LoginComponent implements OnDestroy {
   constructor( 
     private router: Router,
     private fb: FormBuilder,
+    private userSvc: UserService,
     private authSvc: AuthService,
     private dialogSvc: DialogService,
-    private datetimeSvc: DatetimeService
   ) { 
     this.loginForm = this.fb.group({
       email: ['', [
@@ -45,23 +45,23 @@ export class LoginComponent implements OnDestroy {
 
   onLogin() {
     if (this.loginForm.valid) {
-      let user: User;
       const { email, password } = this.loginForm.value;
  
-      user.id = uuidv4();
-      user.email = email;
-      user.password = password;
-      user.createdAt = this.datetimeSvc.getUnixTime();
-      user.lastLogin = user.createdAt;
-
-      this.subscription = this.authSvc.create(user)
+      this.subscription = this.userSvc.getAll()
         .subscribe({
-          next: data => console.log(data),
+          next: userArr => {
+            const user = this.findUserByEmailAndPassword(userArr, email, password);
+            user ? this.authSvc.login(user) : console.log('Usuario o password incorrectos');
+          },
           error: err => this.dialogSvc.error(err),
-          complete: () => this.router.navigateByUrl('/')
+          complete: () => console.log('Task complete!')
         }); 
     }
     return;
+  }
+
+  private findUserByEmailAndPassword(users: User[], email: string, password: string): User | undefined {
+    return users.find(user => user.email === email && user.password === password);
   }
 
   ngOnDestroy(): void {

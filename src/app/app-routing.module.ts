@@ -10,7 +10,6 @@ import { ColorsComponent } from './features/components/colors/colors.component';
 import { DashboardComponent } from './features/components/dashboard.component';
 
 import { LoginComponent } from './auth/components/login/login.component';
-import { RegisterComponent } from './auth/components/register/register.component';
 
 const routes: Routes = [
   { 

@@ -14,41 +14,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<User[]> {
-    return this.http.get(`${ this.endPoint }/${ this.collection }.json`)
-      .pipe(
-        map((response) => {
-          this.UserArr = this.createArray(response);
-          return this.UserArr;
-        })
-      );
-  }    
 
-  getOne(id: string): Observable<Object> {
-    return this.http.get(`${ this.endPoint }/${ this.collection }/${ id }.json`);
+  login(user: User) {
+      console.log(user);
   }
-
-  create(user: User): Observable<Object> {
-    return this.http.put( `${ this.endPoint }/${ this.collection }/${ user.id }.json`, user);
-  }
-
-  update(user: User): Observable<Object> {
-    return this.http.put(`${ this.endPoint }/${ this.collection }/${ user.id }.json`, user);
-  }  
-
-  private createArray(customersObj: object): User[] {
-    if ( customersObj === null ) { return []; }
-
-    const UserArr = [];
-    Object.values(customersObj).forEach( value => {
-      const user = value;
-      UserArr.push(user);
-    });
-    return UserArr;
-  }
-
-  delete(id: string) {
-    return this.http.delete(`${ this.endPoint }/${ this.collection }/${ id }.json`);
-  }
-
 }

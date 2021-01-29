@@ -3,23 +3,23 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { Customer } from 'src/app/core/models/customer.model';
+import { User } from 'src/app/core/models/user.model';
 
 @Injectable()
-export class CustomerService {
+export class UserService {
 
-  private customerArr: Customer[]; 
-  private collection = 'customers';
+  private UserArr: User[]; 
+  private collection = 'users';
   private endPoint = 'https://portafolioangular-135a6.firebaseio.com';
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Customer[]> {
+  getAll(): Observable<User[]> {
     return this.http.get(`${this.endPoint}/${this.collection}.json`)
       .pipe(
         map((response) => {
-          this.customerArr = this.createArray(response);
-          return this.customerArr;
+          this.UserArr = this.createArray(response);
+          return this.UserArr;
         })
       );
   }    
@@ -28,23 +28,23 @@ export class CustomerService {
     return this.http.get(`${this.endPoint}/${this.collection}/${id}.json`);
   }
 
-  create(customer: Customer): Observable<Object> {
-    return this.http.put(`${this.endPoint}/${this.collection}/${customer.id}.json`, customer);
+  create(user: User): Observable<Object> {
+    return this.http.put(`${this.endPoint}/${this.collection}/${user.id}.json`, user);
   }
 
-  update(customer: Customer): Observable<Object> {
-    return this.http.put(`${this.endPoint}/${this.collection}/${customer.id}.json`, customer);
+  update(user: User): Observable<Object> {
+    return this.http.put(`${this.endPoint}/${this.collection}/${user.id}.json`, user);
   }  
 
-  private createArray(customersObj: object): Customer[] {
+  private createArray(customersObj: object): User[] {
     if (customersObj === null) { return []; }
 
-    const customerArr = [];
+    const UserArr = [];
     Object.values(customersObj).forEach(value => {
-      const customer = value;
-      customerArr.push(customer);
+      const user = value;
+      UserArr.push(user);
     });
-    return customerArr;
+    return UserArr;
   }
 
   delete(id: string) {
