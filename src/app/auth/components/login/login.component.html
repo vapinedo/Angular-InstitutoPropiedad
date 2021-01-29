@@ -7,6 +7,8 @@
         <header>
             <img [src]="logo">
         </header>
+
+        <p *ngIf="authError" class="auth-error">Usuario o contraseña incorrectos</p>
         
         <form [formGroup]="loginForm" (ngSubmit)="onLogin()" autocomplete="off">
             <mat-form-field>
@@ -29,7 +31,9 @@
             <mat-checkbox class="remember">Recordar contraseña</mat-checkbox>
 
             <div class="footer">
+                <app-facebook-loader *ngIf="showLoader"></app-facebook-loader>
                 <button 
+                    *ngIf="!showLoader"
                     type="submit" 
                     color="primary"
                     mat-raised-button>

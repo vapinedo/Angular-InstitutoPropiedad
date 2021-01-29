@@ -6,6 +6,7 @@ import { DialogService } from './services/dialog.service';
 import { DatetimeService } from './services/datetime.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { AuthService } from './services/auth.service';
     DialogService,
     DatetimeService,
     UserService,
-    AuthService
+    AuthService,
+    StorageService
   ]
 })
 export class CoreModule { }

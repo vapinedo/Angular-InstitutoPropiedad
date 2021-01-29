@@ -7,7 +7,6 @@ import { UserService } from '../../../core/services/user.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogService } from '../../../core/services/dialog.service';
-import { DatetimeService } from 'src/app/core/services/datetime.service';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +15,8 @@ import { DatetimeService } from 'src/app/core/services/datetime.service';
 })
 export class LoginComponent implements OnDestroy {
 
+  public authError = false;
+  public showLoader = false;
   public loginForm: FormGroup;
   public subscription = new Subscription();
   public logo = '../../../assets/img/logo.png';
@@ -45,16 +46,24 @@ export class LoginComponent implements OnDestroy {
 
   onLogin() {
     if (this.loginForm.valid) {
+      this.showLoader = true;
       const { email, password } = this.loginForm.value;
  
       this.subscription = this.userSvc.getAll()
         .subscribe({
           next: userArr => {
             const user = this.findUserByEmailAndPassword(userArr, email, password);
-            user ? this.authSvc.login(user) : console.log('Usuario o password incorrectos');
+            if (user) {
+              this.authError = false;          
+              this.authSvc.login(user);
+              this.router.navigate(['/']);
+
+            } else {
+              this.authError = true;
+            }
           },
           error: err => this.dialogSvc.error(err),
-          complete: () => console.log('Task complete!')
+          complete: () => this.showLoader = false
         }); 
     }
     return;

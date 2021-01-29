@@ -13,6 +13,7 @@ import { SubmenuComponent } from './components/sidebar/submenu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SpinnerComponent } from './components/loaders/spinner.component';
 import { ProgressbarComponent } from './components/loaders/progressbar.component';
+import { FacebookLoaderComponent } from './components/loaders/facebook-loader.component';
 import { NotificationsMenuComponent } from './components/notifications-menu/notifications-menu.component';
 
 const components = [
@@ -23,6 +24,7 @@ const components = [
   FooterComponent,
   SpinnerComponent,
   ProgressbarComponent,
+  FacebookLoaderComponent,
   NotificationsMenuComponent,  
 ];
 
