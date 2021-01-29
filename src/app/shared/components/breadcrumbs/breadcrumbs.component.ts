@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 import { Title } from '@angular/platform-browser';
@@ -12,8 +12,7 @@ import { BreadcrumbService, Breadcrumb } from 'angular-crumbs';
 export class BreadcrumbsComponent implements OnInit {
 
   private appName = 'SINAP';
-  private subscription1 = new Subscription();
-  @Output() onTitleChange = new EventEmitter<string>();
+  private subscription = new Subscription();
 
   constructor(
     private titleSvc: Title,
@@ -21,13 +20,8 @@ export class BreadcrumbsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.subscription1 = this.breadcrumbSvc.breadcrumbChanged
-      .subscribe( crumbs => {
-        this.titleSvc.setTitle(this.createTitle(crumbs));
-
-        const title = crumbs[0].displayName;
-        this.onTitleChange.emit(title);
-      });
+    this.subscription = this.breadcrumbSvc.breadcrumbChanged
+      .subscribe( crumbs => this.titleSvc.setTitle(this.createTitle(crumbs)));
   }
 
   private createTitle(routesCollection: Breadcrumb[]): string {
@@ -47,7 +41,7 @@ export class BreadcrumbsComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.subscription1.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
 }

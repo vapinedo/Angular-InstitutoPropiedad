@@ -7,11 +7,4 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  public titleFromBreadCrumbs: string;
-
-  constructor() { }
-
-  getTitle(title: string): void {
-    this.titleFromBreadCrumbs = title;
-  }
 }
