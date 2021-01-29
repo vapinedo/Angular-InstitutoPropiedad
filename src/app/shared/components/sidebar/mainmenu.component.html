@@ -27,7 +27,10 @@
             <mat-icon>apps</mat-icon>
             <span>Utilidades</span>
         </a>
-        
+        <a (click)="onLogout()" matTooltip="Cerrar Sesión" matTooltipPosition="right">
+            <mat-icon>power_settings_new</mat-icon>
+            <span>Salir</span>
+        </a>
     </nav>
 
     <app-submenu *ngIf="sidedarIsOpen"></app-submenu>

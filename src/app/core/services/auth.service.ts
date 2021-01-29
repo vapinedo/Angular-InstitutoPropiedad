@@ -16,8 +16,16 @@ export class AuthService {
     private storageSvc: StorageService
   ) { }
 
+  userAuth(): object | null {
+    const user = this.storageSvc.getItem('user');
+    return user ? user : null;
+  }
 
   login(user: User): void {
     this.storageSvc.setItem('user', user);
+  }
+
+  logout() {
+    this.storageSvc.clear();
   }
 }
