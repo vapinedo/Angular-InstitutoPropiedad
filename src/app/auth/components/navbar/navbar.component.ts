@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  public readonly logo = 'src/assets/img/logo.png';
+  public readonly logo = '../../../../assets/img/logo-xs.png';
 
   constructor() { }
 
